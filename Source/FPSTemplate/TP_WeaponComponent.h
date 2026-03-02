@@ -14,10 +14,6 @@ class FPSTEMPLATE_API UTP_WeaponComponent : public USkeletalMeshComponent
 	GENERATED_BODY()
 
 public:
-	/** Projectile class to spawn */
-	UPROPERTY(EditDefaultsOnly, Category=Projectile)
-	TSubclassOf<class AFPSTemplateProjectile> ProjectileClass;
-
 	/** Sound to play each time we fire */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
 	USoundBase* FireSound;
@@ -45,16 +41,15 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Weapon")
 	bool AttachWeapon(AFPSTemplateCharacter* TargetCharacter);
 
-	/** Make the weapon Fire a Projectile */
-	UFUNCTION(BlueprintCallable, Category="Weapon")
-	void Fire();
-
 protected:
 	/** Ends gameplay for this component. */
 	UFUNCTION()
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
-
-private:
+	
+	/** Make the weapon Fire a Projectile */
+	UFUNCTION(BlueprintCallable, Category="Weapon")
+	virtual void Fire();
+	
 	/** The Character holding this weapon*/
 	AFPSTemplateCharacter* Character;
 };
