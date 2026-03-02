@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "TP_WeaponComponent.h"
+#include "NiagaraComponent.h"
+#include "NiagaraFunctionLibrary.h"
 #include "TP_RayWeaponComponent.generated.h"
 
 /**
@@ -19,6 +21,12 @@ public:
 	float WeaponRange = 10000.f;
 	
 	virtual void Fire() override;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Asset References")
+	UNiagaraSystem* BeamParticles;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Asset References")
+	UNiagaraSystem* HitParticles;
 	
 	
 };

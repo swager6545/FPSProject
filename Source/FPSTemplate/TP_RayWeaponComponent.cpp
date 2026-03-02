@@ -3,7 +3,7 @@
 
 #include "TP_RayWeaponComponent.h"
 #include "FPSTemplateCharacter.h"
-#include "FPSTemplateCharacter.h"
+#include "NiagaraDataInterfaceArrayFunctionLibrary.h"
 
 void UTP_RayWeaponComponent::Fire()
 {
@@ -27,21 +27,39 @@ void UTP_RayWeaponComponent::Fire()
 			
 			//check if the projectiles hit an object
 			bool isHit = World->LineTraceSingleByChannel(OutHit, Start, End, ECC_Visibility);
-			DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 1, 0, 1);
+			FVector BeamEnd = End;
 			
-			//check if the hit result is a blocking hit
 			if (isHit)
 			{
+				//check if the hit result is a blocking hit
 				if (OutHit.bBlockingHit)
 				{
 					AActor* OtherActor = OutHit.GetActor();
 					UPrimitiveComponent* OtherComp = OutHit.GetComponent();
+					
+					if (HitParticles != nullptr)
+					{
+						//spawn the hit particles
+						UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), HitParticles, OutHit.ImpactPoint, OutHit.ImpactNormal.Rotation());
+					}
 					
 					if (OtherActor != nullptr && (OtherActor != GetOwner()) && 
 						(OtherComp != nullptr) && (OtherComp->IsSimulatingPhysics()))
 					{
 						//how much force the projectiles have
 						OtherComp->AddImpulseAtLocation(Forward * 300000.f, OutHit.ImpactPoint);
+						BeamEnd = OutHit.ImpactPoint;
+						
+						if (BeamParticles != nullptr)
+						{
+							//add effects to the ray gun
+							UNiagaraComponent* effect = UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), BeamParticles, Start);
+							
+							if (effect != nullptr)
+							{
+								effect->SetVariableVec3(TEXT("EndPoint"), BeamEnd);
+							}
+						}
 					}
 				}
 			}

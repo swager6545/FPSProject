@@ -12,12 +12,20 @@
     <list default="true" id="e91e1c93-597e-4d32-93b5-cd039b7ad70d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileWeaponPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileWeaponPickUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayWeaponPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayWeaponPickUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/9/12/11TU0TPY1CK35WSDUC2JS7.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplate.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplate.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,6 +60,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;C/C++ Project.FPSTemplate.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -159,7 +168,10 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
   </component>
@@ -171,7 +183,8 @@
       <option name="presentableId" value="Default" />
       <updated>1772445195996</updated>
       <workItem from="1772445197250" duration="132000" />
-      <workItem from="1772445386441" duration="5578000" />
+      <workItem from="1772445386441" duration="7222000" />
+      <workItem from="1772456037709" duration="2321000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored the code">
       <option name="closed" value="true" />
@@ -181,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772450012898</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added a ray weapon">
+      <option name="closed" value="true" />
+      <created>1772452136807</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772452136807</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,7 +213,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Refactored the code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored the code" />
+    <MESSAGE value="Added a ray weapon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a ray weapon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
