@@ -13,10 +13,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayWeaponPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayWeaponPickUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/9/12/11TU0TPY1CK35WSDUC2JS7.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplate.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplate.Build.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Particles/GunBeamParticleSystem.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Particles/GunBeamParticleSystem.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +181,7 @@
       <updated>1772445195996</updated>
       <workItem from="1772445197250" duration="132000" />
       <workItem from="1772445386441" duration="7222000" />
-      <workItem from="1772456037709" duration="2321000" />
+      <workItem from="1772456037709" duration="4281000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored the code">
       <option name="closed" value="true" />
@@ -202,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772452136807</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added a particle system">
+      <option name="closed" value="true" />
+      <created>1772459442150</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1772459442150</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +219,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Refactored the code" />
     <MESSAGE value="Added a ray weapon" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a ray weapon" />
+    <MESSAGE value="Added a particle system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a particle system" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
