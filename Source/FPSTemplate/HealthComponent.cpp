@@ -19,27 +19,25 @@ void UHealthComponent::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	//default values for health
 	MaxHealth = 100.0f;
 	Health = MaxHealth;
 }
 
 
-void UHealthComponent::UpdateHealth(float Damage, AActor* DamageCauser)
+void UHealthComponent::UpdateHealth(float Damage)
 {
 	Health -= Damage;
-	//clamp the values so it won't go over or under the health and max health values
+	//clamp the values so it won't go over or under the current and max health values
 	Health = FMath::Clamp(Health, 0.f, MaxHealth);
 	
 	//updates the health value
 	OnHealthChanged.Broadcast(Health, MaxHealth);
 	
-	//update the damage when the actor gets hit
+	//update the damage when the actors gets hit
 	if (Health == 0)
 	{
-		OnDeath.Broadcast(DamageCauser);
+		OnDeath.Broadcast();
 	}
-	
-	
-	
 }
 

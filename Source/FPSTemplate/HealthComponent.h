@@ -6,7 +6,7 @@
 #include "Components/ActorComponent.h"
 #include "HealthComponent.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDamageChanged, AActor*, Hitter);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDamageChanged);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHealthChanged, float, NewHealth, float, MaxHealth);
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -38,7 +38,7 @@ protected:
 
 public:	
 	UFUNCTION(BlueprintCallable, Category = "Health")
-	void UpdateHealth(float Damage, AActor* DamageCauser);
+	void UpdateHealth(float Damage);
 	
 
 		
