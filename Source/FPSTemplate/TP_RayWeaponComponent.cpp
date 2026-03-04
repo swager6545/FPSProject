@@ -4,6 +4,7 @@
 #include "TP_RayWeaponComponent.h"
 #include "FPSTemplateCharacter.h"
 #include "NiagaraDataInterfaceArrayFunctionLibrary.h"
+#include "Kismet/GameplayStatics.h"
 
 void UTP_RayWeaponComponent::Fire()
 {
@@ -58,6 +59,12 @@ void UTP_RayWeaponComponent::Fire()
 							if (effect != nullptr)
 							{
 								effect->SetVariableVec3(TEXT("EndPoint"), BeamEnd);
+							}
+							
+							//play sound when it hits any target
+							if (FireSound != nullptr)
+							{
+								UGameplayStatics::PlaySoundAtLocation(this, FireSound, Character->GetActorLocation());
 							}
 						}
 					}
