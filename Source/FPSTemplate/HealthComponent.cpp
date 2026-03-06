@@ -11,6 +11,10 @@ UHealthComponent::UHealthComponent()
 	PrimaryComponentTick.bCanEverTick = false;
 
 	// ...
+	
+	//default values for health
+	MaxHealth = 100.0f;
+	Health = MaxHealth;
 }
 
 
@@ -18,10 +22,17 @@ UHealthComponent::UHealthComponent()
 void UHealthComponent::BeginPlay()
 {
 	Super::BeginPlay();
+}
+
+//destroy component when the player dies
+void UHealthComponent::OnComponentDestroyed(bool bIsDead)
+{
+	Super::OnComponentDestroyed(bIsDead);
 	
-	//default values for health
-	MaxHealth = 100.0f;
-	Health = MaxHealth;
+	if (bIsDead)
+	{
+		FOnActorDestroyed();
+	}
 }
 
 
@@ -38,6 +49,7 @@ void UHealthComponent::UpdateHealth(float Damage)
 	if (Health == 0)
 	{
 		OnDeath.Broadcast();
+		OnComponentDestroyed(true);
 	}
 }
 

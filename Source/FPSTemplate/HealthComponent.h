@@ -35,10 +35,14 @@ public:
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
+	
+	virtual void OnComponentDestroyed(bool bIsDead) override;
 
 public:	
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	void UpdateHealth(float Damage);
+	
+	
 	
 
 		

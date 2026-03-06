@@ -14,14 +14,16 @@
   <component name="ChangeListManager">
     <list default="true" id="e91e1c93-597e-4d32-93b5-cd039b7ad70d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/1/K6/RRM5WO8YTYT5NZLGXKH6LT.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/1/K6/RRM5WO8YTYT5NZLGXKH6LT.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/2/I2/ZOG17Z2IQS6GOBNZB40VIG.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/2/I2/ZOG17Z2IQS6GOBNZB40VIG.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/4/1Y/V9LAS4OUKWGMSIUWK1D80F.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/4/1Y/V9LAS4OUKWGMSIUWK1D80F.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/7/ZN/0A5SBJVYJCXN0VHZDEO24C.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/7/ZN/0A5SBJVYJCXN0VHZDEO24C.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FPSTemplate.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/FPSTemplate.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileWeaponComponent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileWeaponComponent.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileWeaponPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileWeaponPickUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayWeaponComponent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayWeaponComponent.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/A/AW/UTPWZQ085VD70GTIGWZB8T.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/A/AW/UTPWZQ085VD70GTIGWZB8T.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/HealthComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/HealthComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/HealthComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/HealthComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponPickUp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponPickUp.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +204,8 @@
       <workItem from="1772552682850" duration="262000" />
       <workItem from="1772553178944" duration="1700000" />
       <workItem from="1772625743771" duration="8576000" />
-      <workItem from="1772635218199" duration="6862000" />
+      <workItem from="1772635218199" duration="7204000" />
+      <workItem from="1772801706082" duration="6274000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored the code">
       <option name="closed" value="true" />
@@ -244,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772634068678</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added a working health bar">
+      <option name="closed" value="true" />
+      <created>1772643082992</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1772643082992</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +270,8 @@
     <MESSAGE value="Added a particle system" />
     <MESSAGE value="Added sound to the ray gun" />
     <MESSAGE value="Added a health component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a health component" />
+    <MESSAGE value="Added a working health bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a working health bar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

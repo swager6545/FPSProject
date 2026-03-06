@@ -39,7 +39,6 @@ void ATP_WeaponPickUp::BeginPlay()
 
 void ATP_WeaponPickUp::AttachWeapon(AFPSTemplateCharacter* PickUpCharacter)
 {
-	//check if the WeaponPickUp and PickUpCharacter
 	if (WeaponPickUp != nullptr)
 	{
 		if (PickUpCharacter != nullptr)
