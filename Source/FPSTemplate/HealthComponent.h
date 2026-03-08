@@ -41,9 +41,4 @@ protected:
 public:	
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	void UpdateHealth(float Damage);
-	
-	
-	
-
-		
 };
