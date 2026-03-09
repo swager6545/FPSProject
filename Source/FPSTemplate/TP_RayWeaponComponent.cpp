@@ -5,7 +5,6 @@
 #include "FPSTemplateCharacter.h"
 #include "NiagaraDataInterfaceArrayFunctionLibrary.h"
 #include "Kismet/GameplayStatics.h"
-#include "HealthComponent.h"
 
 void UTP_RayWeaponComponent::Fire()
 {
@@ -51,9 +50,12 @@ void UTP_RayWeaponComponent::Fire()
 						//if any object has simulating physics the beams will trigger it
 						if (OtherComp->IsSimulatingPhysics())
 						{
-							//how much force the projectiles have
-							OtherComp->AddImpulseAtLocation(Forward * 300000.f, OutHit.ImpactPoint);
-							BeamEnd = OutHit.ImpactPoint;
+							WeaponEffects(OutHit);
+						}
+						
+						if (OtherActor != GetOwner())
+						{
+							UpdateDamage(OutHit);
 						}
 						
 						if (BeamParticles != nullptr)
@@ -64,14 +66,6 @@ void UTP_RayWeaponComponent::Fire()
 							if (effect != nullptr)
 							{
 								effect->SetVariableVec3(TEXT("EndPoint"), BeamEnd);
-							}
-							
-							//add damage to the actors
-							UHealthComponent* HealthComp = OtherActor->GetComponentByClass<UHealthComponent>();
-							if (HealthComp != nullptr)
-							{
-								//the actors will take damage after the beam hits them
-								HealthComp->UpdateHealth(50);
 							}
 							
 							//play sound when it hits any target

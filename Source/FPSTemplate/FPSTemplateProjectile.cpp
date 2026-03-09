@@ -1,6 +1,8 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "FPSTemplateProjectile.h"
+
+#include "TP_WeaponComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
 
@@ -31,12 +33,20 @@ AFPSTemplateProjectile::AFPSTemplateProjectile()
 	InitialLifeSpan = 3.0f;
 }
 
+void AFPSTemplateProjectile::SetOwningWeapon(UTP_WeaponComponent* newOwningWeapon)
+{
+	OwningWeapon = newOwningWeapon;
+}
+
 void AFPSTemplateProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
 	// Only add impulse and destroy projectile if we hit a physics
 	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr) && OtherComp->IsSimulatingPhysics())
 	{
-		OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
+		//OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
+		
+		OwningWeapon->WeaponEffects(Hit);
+		OwningWeapon->UpdateDamage(Hit);
 
 		Destroy();
 	}

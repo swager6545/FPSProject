@@ -40,7 +40,31 @@ public:
 	/** Attaches the actor to a FirstPersonCharacter */
 	UFUNCTION(BlueprintCallable, Category="Weapon")
 	bool AttachWeapon(AFPSTemplateCharacter* TargetCharacter);
-
+	
+	UFUNCTION()
+	void UpdateDamage(FHitResult OutHit) const;
+	
+	UFUNCTION()
+	void WeaponEffects(FHitResult OutHit) const;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
+	float WeaponDamage;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
+	float WeaponKnockback;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
+	float UpKnockback;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
+	bool ProjectileGravity;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
+	bool DoesShrink;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
+	bool DoesGrow;
+	
 protected:
 	/** Ends gameplay for this component. */
 	UFUNCTION()
