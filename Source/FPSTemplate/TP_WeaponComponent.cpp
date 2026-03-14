@@ -26,6 +26,7 @@ UTP_WeaponComponent::UTP_WeaponComponent()
 	
 	//enables gravity
 	ProjectileGravity = true;
+	
 }
 
 bool UTP_WeaponComponent::AttachWeapon(AFPSTemplateCharacter* TargetCharacter)
@@ -55,6 +56,9 @@ bool UTP_WeaponComponent::AttachWeapon(AFPSTemplateCharacter* TargetCharacter)
 		{
 			// Fire
 			EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Triggered, this, &UTP_WeaponComponent::Fire);
+			
+			//reload
+			EnhancedInputComponent->BindAction(ReloadAction, ETriggerEvent::Completed, this, &UTP_WeaponComponent::Reload);
 		}
 	}
 
@@ -137,4 +141,29 @@ void UTP_WeaponComponent::WeaponEffects(FHitResult OutHit) const
 		}
 	} 
 	
+}
+
+void UTP_WeaponComponent::Reload()
+{
+	if (MagAmmo < MaxMagAmmo &&  CurrentAmmo > 0)
+	{
+		//ammo left in the magazine
+		int32 AmmoLeftInMag = MaxMagAmmo - MagAmmo;
+		
+		//ammo that is left over to reload
+		int32 AmmoToReload = FMath::Min(AmmoLeftInMag, CurrentAmmo);
+		
+		MagAmmo += AmmoToReload;
+		CurrentAmmo -= AmmoToReload;
+		
+		MagAmmo = FMath::Clamp(MagAmmo, 0, MaxMagAmmo);
+		
+		CurrentAmmo = FMath::Clamp(CurrentAmmo, 0, MaxTotalAmmo);
+		
+		if (CurrentAmmo == 0)
+		{
+			UE_LOG(LogTemp, Display, TEXT("You ran out of ammo"));
+		}
+		
+	}
 }

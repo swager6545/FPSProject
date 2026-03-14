@@ -13,81 +13,92 @@ void UTP_RayWeaponComponent::Fire()
 	UWorld* const World = GetWorld();
 	if (World != nullptr)
 	{
-		APlayerController* PlayerController = Cast<APlayerController>(Character->GetController());
-		
-		if (PlayerController != nullptr)
+		//if there is ammo the gun will shoot projectiles normally until it runs out
+		if (MagAmmo > 0)
 		{
-			//line trace to make collisions work
-			FHitResult OutHit;
-			const FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
-			/*MuzzleOffset is in camera space, so transform it to world space before offsetting from the
-			 *character location to find the final muzzle location*/
-			const FVector Start = GetOwner()->GetActorLocation() + SpawnRotation.RotateVector(MuzzleOffset);
-			const FVector Forward = SpawnRotation.Vector();
-			const FVector End = Start + (Forward * WeaponRange);
-			
-			//check if the projectiles hit an object
-			bool isHit = World->LineTraceSingleByChannel(OutHit, Start, End, ECC_Visibility);
-			FVector BeamEnd = End;
-			
-			if (isHit)
+			APlayerController* PlayerController = Cast<APlayerController>(Character->GetController());
+		
+			if (PlayerController != nullptr)
 			{
-				//check if the hit result is a blocking hit
-				if (OutHit.bBlockingHit)
+				//line trace to make collisions work
+				FHitResult OutHit;
+				const FRotator SpawnRotation = PlayerController->PlayerCameraManager->GetCameraRotation();
+				/*MuzzleOffset is in camera space, so transform it to world space before offsetting from the
+				 *character location to find the final muzzle location*/
+				const FVector Start = GetOwner()->GetActorLocation() + SpawnRotation.RotateVector(MuzzleOffset);
+				const FVector Forward = SpawnRotation.Vector();
+				const FVector End = Start + (Forward * WeaponRange);
+			
+				//check if the projectiles hit an object
+				bool isHit = World->LineTraceSingleByChannel(OutHit, Start, End, ECC_Visibility);
+				FVector BeamEnd = End;
+			
+				if (isHit)
 				{
-					AActor* OtherActor = OutHit.GetActor();
-					UPrimitiveComponent* OtherComp = OutHit.GetComponent();
-					
-					if (HitParticles != nullptr)
+					//check if the hit result is a blocking hit
+					if (OutHit.bBlockingHit)
 					{
-						//spawn the hit particles
-						UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), HitParticles, OutHit.ImpactPoint, OutHit.ImpactNormal.Rotation());
-					}
+						AActor* OtherActor = OutHit.GetActor();
+						UPrimitiveComponent* OtherComp = OutHit.GetComponent();
 					
-					if (OtherActor != nullptr && (OtherActor != GetOwner()) || 
-						(OtherComp != nullptr) && (OtherComp->IsSimulatingPhysics()))
-					{
-						//if any object has simulating physics the beams will trigger it
-						if (OtherComp->IsSimulatingPhysics())
+						if (HitParticles != nullptr)
 						{
-							WeaponEffects(OutHit);
+							//spawn the hit particles
+							UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), HitParticles, OutHit.ImpactPoint, OutHit.ImpactNormal.Rotation());
 						}
-						
-						if (OtherActor != GetOwner())
+					
+						if (OtherActor != nullptr && (OtherActor != GetOwner()) || 
+							(OtherComp != nullptr) && (OtherComp->IsSimulatingPhysics()))
 						{
-							UpdateDamage(OutHit);
-						}
+							//if any object has simulating physics the beams will trigger it
+							if (OtherComp->IsSimulatingPhysics())
+							{
+								WeaponEffects(OutHit);
+							}
 						
-						if (BeamParticles != nullptr)
-						{
-							//add effects to the ray gun
-							UNiagaraComponent* effect = UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), BeamParticles, Start);
-							
-							if (effect != nullptr)
+							if (OtherActor != GetOwner())
 							{
-								effect->SetVariableVec3(TEXT("EndPoint"), BeamEnd);
+								UpdateDamage(OutHit);
 							}
-							
-							//play sound when it hits any target
-							if (FireSound != nullptr)
+						
+							if (BeamParticles != nullptr)
 							{
-								UGameplayStatics::PlaySoundAtLocation(this, FireSound, Character->GetActorLocation());
-							}
+								//add effects to the ray gun
+								UNiagaraComponent* effect = UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), BeamParticles, Start);
 							
-							// Try and play a firing animation if specified
-							if (FireAnimation != nullptr)
-							{
-								// Get the animation object for the arms mesh
-								UAnimInstance* AnimInstance = Character->GetMesh1P()->GetAnimInstance();
-								if (AnimInstance != nullptr)
+								if (effect != nullptr)
 								{
-									AnimInstance->Montage_Play(FireAnimation, 1.f);
+									effect->SetVariableVec3(TEXT("EndPoint"), BeamEnd);
+								}
+							
+								//play sound when it hits any target
+								if (FireSound != nullptr)
+								{
+									UGameplayStatics::PlaySoundAtLocation(this, FireSound, Character->GetActorLocation());
+								}
+							
+								// Try and play a firing animation if specified
+								if (FireAnimation != nullptr)
+								{
+									// Get the animation object for the arms mesh
+									UAnimInstance* AnimInstance = Character->GetMesh1P()->GetAnimInstance();
+									if (AnimInstance != nullptr)
+									{
+										AnimInstance->Montage_Play(FireAnimation, 1.f);
+									}
 								}
 							}
 						}
 					}
 				}
 			}
+			//decrement the ammo once fired
+			MagAmmo -= 1;
+			OnAmmoChanged.Broadcast(MagAmmo, CurrentAmmo);
 		}
+	}
+	else if (CurrentAmmo > 0)
+	{
+		Reload();
 	}
 }

@@ -8,12 +8,31 @@
 
 class AFPSTemplateCharacter;
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnAmmoChanged, int32, MagAmmo, int32, CurrentAmmo);
+
 UCLASS(Blueprintable, BlueprintType, ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class FPSTEMPLATE_API UTP_WeaponComponent : public USkeletalMeshComponent
 {
 	GENERATED_BODY()
 
 public:
+	
+	/** Sets default values for this component's properties */
+	UTP_WeaponComponent();
+
+	/** Attaches the actor to a FirstPersonCharacter */
+	UFUNCTION(BlueprintCallable, Category="Weapon")
+	bool AttachWeapon(AFPSTemplateCharacter* TargetCharacter);
+	
+	UFUNCTION()
+	void UpdateDamage(FHitResult OutHit) const;
+	
+	UFUNCTION()
+	void WeaponEffects(FHitResult OutHit) const;
+	
+	UFUNCTION(BlueprintCallable, Category="Weapon")
+	void Reload();
+	
 	/** Sound to play each time we fire */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
 	USoundBase* FireSound;
@@ -33,19 +52,9 @@ public:
 	/** Fire Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	class UInputAction* FireAction;
-
-	/** Sets default values for this component's properties */
-	UTP_WeaponComponent();
-
-	/** Attaches the actor to a FirstPersonCharacter */
-	UFUNCTION(BlueprintCallable, Category="Weapon")
-	bool AttachWeapon(AFPSTemplateCharacter* TargetCharacter);
 	
-	UFUNCTION()
-	void UpdateDamage(FHitResult OutHit) const;
-	
-	UFUNCTION()
-	void WeaponEffects(FHitResult OutHit) const;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
+	class UInputAction* ReloadAction;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
 	float WeaponDamage;
@@ -64,6 +73,24 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
 	bool DoesGrow;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
+	int32 CurrentAmmo;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
+	int32 MaxTotalAmmo;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
+	int32 MagAmmo;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
+	int32 MaxMagAmmo;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
+	float ReloadTime;
+	
+	UPROPERTY(BlueprintAssignable, Category=Weapons)
+	FOnAmmoChanged OnAmmoChanged;
 	
 protected:
 	/** Ends gameplay for this component. */
