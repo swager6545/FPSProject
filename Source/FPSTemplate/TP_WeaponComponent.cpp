@@ -26,7 +26,6 @@ UTP_WeaponComponent::UTP_WeaponComponent()
 	
 	//enables gravity
 	ProjectileGravity = true;
-	
 }
 
 bool UTP_WeaponComponent::AttachWeapon(AFPSTemplateCharacter* TargetCharacter)
@@ -42,6 +41,8 @@ bool UTP_WeaponComponent::AttachWeapon(AFPSTemplateCharacter* TargetCharacter)
 	// Attach the weapon to the First Person Character
 	FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
 	AttachToComponent(Character->GetMesh1P(), AttachmentRules, FName(TEXT("GripPoint")));
+	
+	OnAmmoChanged.Broadcast(MagAmmo, CurrentAmmo);
 
 	// Set up action bindings
 	if (APlayerController* PlayerController = Cast<APlayerController>(Character->GetController()))
@@ -156,9 +157,12 @@ void UTP_WeaponComponent::Reload()
 		MagAmmo += AmmoToReload;
 		CurrentAmmo -= AmmoToReload;
 		
+		//clamp these values so that the ammo won't go over the limit
 		MagAmmo = FMath::Clamp(MagAmmo, 0, MaxMagAmmo);
-		
 		CurrentAmmo = FMath::Clamp(CurrentAmmo, 0, MaxTotalAmmo);
+		
+		//update the ammo counter once the weapon is reloaded
+		OnAmmoChanged.Broadcast(MagAmmo, CurrentAmmo);
 		
 		if (CurrentAmmo == 0)
 		{

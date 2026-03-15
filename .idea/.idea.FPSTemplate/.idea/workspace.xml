@@ -14,15 +14,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e91e1c93-597e-4d32-93b5-cd039b7ad70d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_HUDWidget.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_HUDWidget.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileWeaponPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileWeaponPickUp.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayWeaponPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayWeaponPickUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Input/IMC_Weapons.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Input/IMC_Weapons.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateProjectile.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_ProjectileWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_ProjectileWeaponComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +210,8 @@
       <workItem from="1773156323253" duration="3996000" />
       <workItem from="1773236699716" duration="2890000" />
       <workItem from="1773503571610" duration="1320000" />
-      <workItem from="1773511380925" duration="12459000" />
+      <workItem from="1773511380925" duration="12515000" />
+      <workItem from="1773572848479" duration="10573000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored the code">
       <option name="closed" value="true" />
@@ -272,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773158022475</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Weapons now have ammo and can reload">
+      <option name="closed" value="true" />
+      <created>1773523950648</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1773523950648</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +294,8 @@
     <MESSAGE value="Added a health component" />
     <MESSAGE value="Added a working health bar" />
     <MESSAGE value="Health bar colours change depending on how&#10;much health the player has" />
-    <option name="LAST_COMMIT_MESSAGE" value="Health bar colours change depending on how&#10;much health the player has" />
+    <MESSAGE value="Weapons now have ammo and can reload" />
+    <option name="LAST_COMMIT_MESSAGE" value="Weapons now have ammo and can reload" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
