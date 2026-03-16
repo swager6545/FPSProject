@@ -149,13 +149,13 @@ void UTP_WeaponComponent::Reload()
 	if (MagAmmo < MaxMagAmmo &&  CurrentAmmo > 0)
 	{
 		//ammo left in the magazine
-		int32 AmmoLeftInMag = MaxMagAmmo - MagAmmo;
+		int32 BulletsLeft = MaxMagAmmo - MagAmmo;
 		
 		//ammo that is left over to reload
-		int32 AmmoToReload = FMath::Min(AmmoLeftInMag, CurrentAmmo);
+		int32 BulletsToReload = FMath::Min(BulletsLeft, CurrentAmmo);
 		
-		MagAmmo += AmmoToReload;
-		CurrentAmmo -= AmmoToReload;
+		MagAmmo += BulletsToReload;
+		CurrentAmmo -= BulletsToReload;
 		
 		//clamp these values so that the ammo won't go over the limit
 		MagAmmo = FMath::Clamp(MagAmmo, 0, MaxMagAmmo);
