@@ -11,6 +11,7 @@
 #include "Engine/LocalPlayer.h"
 #include "Engine/World.h"
 #include "HealthComponent.h"
+#include "TP_ProjectileWeaponComponent.h"
 
 // Sets default values for this component's properties
 UTP_WeaponComponent::UTP_WeaponComponent()
@@ -18,13 +19,13 @@ UTP_WeaponComponent::UTP_WeaponComponent()
 	// Default offset from the character location for projectiles to spawn
 	MuzzleOffset = FVector(100.0f, 0.0f, 10.0f);
 	
-	//default weapon damage
+	// Default weapon damage
 	WeaponDamage = 50.f;
 	
-	//default weapon knockback
+	// Default weapon knockback
 	WeaponKnockback = 2000.f;
 	
-	//enables gravity
+	// Enables gravity
 	ProjectileGravity = true;
 }
 
@@ -42,6 +43,21 @@ bool UTP_WeaponComponent::AttachWeapon(AFPSTemplateCharacter* TargetCharacter)
 	FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
 	AttachToComponent(Character->GetMesh1P(), AttachmentRules, FName(TEXT("GripPoint")));
 	
+	// Set the maximum ammo capacity
+	if (CurrentAmmo >= MaxAmmoCapacity)
+	{
+		CurrentAmmo = MaxAmmoCapacity;
+	}
+	
+	// Set the maximum mag capacity
+	if (MagAmmo >= MaxMagAmmo)
+	{
+		MagAmmo = MaxMagAmmo;
+	}
+	
+	// Subtract the current ammo with the mag ammo so that it accurately show how many bullets the player has
+	CurrentAmmo = CurrentAmmo - MagAmmo;
+	
 	OnAmmoChanged.Broadcast(MagAmmo, CurrentAmmo);
 
 	// Set up action bindings
@@ -58,20 +74,19 @@ bool UTP_WeaponComponent::AttachWeapon(AFPSTemplateCharacter* TargetCharacter)
 			// Fire
 			EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Triggered, this, &UTP_WeaponComponent::Fire);
 			
-			//reload
+			// Reload
 			EnhancedInputComponent->BindAction(ReloadAction, ETriggerEvent::Completed, this, &UTP_WeaponComponent::Reload);
 		}
 	}
-
 	return true;
 }
 
 void UTP_WeaponComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
-	// ensure we have a character owner
+	// Ensure we have a character owner
 	if (Character != nullptr)
 	{
-		// remove the input mapping context from the Player Controller
+		// Remove the input mapping context from the Player Controller
 		if (APlayerController* PlayerController = Cast<APlayerController>(Character->GetController()))
 		{
 			if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
@@ -81,20 +96,20 @@ void UTP_WeaponComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
 		}
 	}
 
-	// maintain the EndPlay call chain
+	// Maintain the EndPlay call chain
 	Super::EndPlay(EndPlayReason);
 }
 
 void UTP_WeaponComponent::Fire()
 {
-	//function will be overriden
+	// Function will be overriden
 }
 
 void UTP_WeaponComponent::UpdateDamage(FHitResult OutHit) const
 {
-	//FHitResult OutHit;
 	AActor* DamageActor = OutHit.GetActor();
-	//add damage to the actors
+	
+	// Add damage to the actors
 	UHealthComponent* HealthComp = DamageActor->GetComponentByClass<UHealthComponent>();
 	if (HealthComp != nullptr)
 	{
@@ -105,29 +120,28 @@ void UTP_WeaponComponent::UpdateDamage(FHitResult OutHit) const
 
 void UTP_WeaponComponent::WeaponEffects(FHitResult OutHit) const
 {
-	//FHitResult OutHit;
 	AActor* OtherActor = OutHit.GetActor();
 	UPrimitiveComponent* OtherComp = OutHit.GetComponent();
 	
-	//make the physics work
+	// Make the physics work
 	FRotator WeaponRotator = Character->GetActorRotation();
 	const FVector WeaponVelocity = WeaponRotator.Vector();
 	const FVector UpWeaponVelocity = OtherComp->GetUpVector() * WeaponRotator.RotateVector(OtherComp->GetUpVector());
 	
-	//Knockback effect
+	// Knockback effect
 	// Only add impulse and destroy projectile if we hit a physics
 	if ((OtherActor != nullptr) && (OtherActor != GetOwner()) && (OtherComp != nullptr) && OtherComp->IsSimulatingPhysics())
 	{
 		OtherComp->AddImpulseAtLocation(WeaponVelocity * WeaponKnockback * 1000, OtherActor->GetActorLocation());
 		
-		//Gravity effect
-		//if it's false the projectiles will make the objects have zero gravity
+		// Gravity effect
+		// If it's false the projectiles will make the objects have zero gravity
 		if (!ProjectileGravity)
 		{
 			OtherComp->SetEnableGravity(false);
 		}
 		
-		//Knockback goes up effect (It doesn't always work sometimes the objects don't go up when hit in a certain direction)
+		// Knockback goes up effect (It doesn't always work sometimes the objects don't go up when hit in a certain direction)
 		OtherComp->AddImpulseAtLocation(UpWeaponVelocity * UpKnockback * 1000, OtherActor->GetActorLocation());
 		
 		if (DoesShrink)
@@ -148,20 +162,20 @@ void UTP_WeaponComponent::Reload()
 {
 	if (MagAmmo < MaxMagAmmo &&  CurrentAmmo > 0)
 	{
-		//ammo left in the magazine
+		// Bullets left in the magazine
 		int32 BulletsLeft = MaxMagAmmo - MagAmmo;
 		
-		//ammo that is left over to reload
+		// Bullets that is left over to reload
 		int32 BulletsToReload = FMath::Min(BulletsLeft, CurrentAmmo);
 		
 		MagAmmo += BulletsToReload;
 		CurrentAmmo -= BulletsToReload;
 		
-		//clamp these values so that the ammo won't go over the limit
+		// Clamp these values so that the ammo won't go over the limit
 		MagAmmo = FMath::Clamp(MagAmmo, 0, MaxMagAmmo);
-		CurrentAmmo = FMath::Clamp(CurrentAmmo, 0, MaxTotalAmmo);
+		CurrentAmmo = FMath::Clamp(CurrentAmmo, 0, MaxAmmoCapacity);
 		
-		//update the ammo counter once the weapon is reloaded
+		// Update the ammo counter once the weapon is reloaded
 		OnAmmoChanged.Broadcast(MagAmmo, CurrentAmmo);
 		
 		if (CurrentAmmo == 0)

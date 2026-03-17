@@ -78,7 +78,7 @@ public:
 	int32 CurrentAmmo;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
-	int32 MaxTotalAmmo;
+	int32 MaxAmmoCapacity;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
 	int32 MagAmmo;
