@@ -12,10 +12,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e91e1c93-597e-4d32-93b5-cd039b7ad70d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayWeaponPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayWeaponPickUp.uasset" afterDir="false" />
-    </list>
+    <list default="true" id="e91e1c93-597e-4d32-93b5-cd039b7ad70d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -211,7 +208,7 @@
       <workItem from="1773678019691" duration="2149000" />
       <workItem from="1773746627494" duration="16226000" />
       <workItem from="1773843216585" duration="952000" />
-      <workItem from="1774005056312" duration="2196000" />
+      <workItem from="1774005056312" duration="3194000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored the code">
       <option name="closed" value="true" />
@@ -301,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773762738026</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added an item script">
+      <option name="closed" value="true" />
+      <created>1774007328070</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1774007328070</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +327,8 @@
     <MESSAGE value="Added a working ammo counter to HUD" />
     <MESSAGE value="Improved the reload code" />
     <MESSAGE value="Added fixes to the reload function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added fixes to the reload function" />
+    <MESSAGE value="Added an item script" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an item script" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

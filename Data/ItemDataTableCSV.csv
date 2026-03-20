@@ -1,0 +1,6 @@
+---,Name,Rarity,BaseValue,Weight
+Sword,Sword,Common,1,1
+RareSword,Rare Sword,Rare,5,1
+UltraRareSword,Ultra Rare Sword,VeryRare,10,2
+LegendarySword,Legendary Sword,Legendary,20,5
+WeakSword,Weak Sword,Common,0,0
