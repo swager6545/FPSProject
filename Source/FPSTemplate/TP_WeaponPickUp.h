@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "TP_WeaponComponent.h"
-#include "FPSTemplateCharacter.h"
 #include "TP_PickUpComponent.h"
 #include "TP_WeaponPickUp.generated.h"
 

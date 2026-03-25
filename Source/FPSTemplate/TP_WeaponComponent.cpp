@@ -11,7 +11,6 @@
 #include "Engine/LocalPlayer.h"
 #include "Engine/World.h"
 #include "HealthComponent.h"
-#include "TP_ProjectileWeaponComponent.h"
 
 // Sets default values for this component's properties
 UTP_WeaponComponent::UTP_WeaponComponent()
