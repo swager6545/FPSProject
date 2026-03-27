@@ -94,10 +94,10 @@ void UTP_RayWeaponComponent::Fire()
 			}
 			//decrement the ammo once fired
 			MagAmmo -= 1;
-			OnAmmoChanged.Broadcast(MagAmmo, CurrentAmmo);
+			OnAmmoChanged.Broadcast(MagAmmo, Ammo);
 		}
 	}
-	else if (CurrentAmmo > 0)
+	else if (Ammo > 0)
 	{
 		Reload();
 	}

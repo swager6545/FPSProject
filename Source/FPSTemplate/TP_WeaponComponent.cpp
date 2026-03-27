@@ -26,6 +26,9 @@ UTP_WeaponComponent::UTP_WeaponComponent()
 	
 	// Enables gravity
 	ProjectileGravity = true;
+	
+	Ammo = MaxAmmoCapacity;
+	MagAmmo = MaxMagAmmo;
 }
 
 bool UTP_WeaponComponent::AttachWeapon(AFPSTemplateCharacter* TargetCharacter)
@@ -43,9 +46,9 @@ bool UTP_WeaponComponent::AttachWeapon(AFPSTemplateCharacter* TargetCharacter)
 	AttachToComponent(Character->GetMesh1P(), AttachmentRules, FName(TEXT("GripPoint")));
 	
 	// Set the maximum ammo capacity
-	if (CurrentAmmo >= MaxAmmoCapacity)
+	if (Ammo >= MaxAmmoCapacity)
 	{
-		CurrentAmmo = MaxAmmoCapacity;
+		Ammo = MaxAmmoCapacity;
 	}
 	
 	// Set the maximum mag capacity
@@ -55,9 +58,9 @@ bool UTP_WeaponComponent::AttachWeapon(AFPSTemplateCharacter* TargetCharacter)
 	}
 	
 	// Subtract the current ammo with the mag ammo so that it accurately show how many bullets the player has
-	CurrentAmmo = CurrentAmmo - MagAmmo;
+	Ammo = Ammo - MagAmmo;
 	
-	OnAmmoChanged.Broadcast(MagAmmo, CurrentAmmo);
+	OnAmmoChanged.Broadcast(MagAmmo, Ammo);
 
 	// Set up action bindings
 	if (APlayerController* PlayerController = Cast<APlayerController>(Character->GetController()))
@@ -159,25 +162,25 @@ void UTP_WeaponComponent::WeaponEffects(FHitResult OutHit) const
 
 void UTP_WeaponComponent::Reload()
 {
-	if (MagAmmo < MaxMagAmmo &&  CurrentAmmo > 0)
+	if (MagAmmo < MaxMagAmmo &&  Ammo > 0)
 	{
 		// Bullets left in the magazine
 		int32 BulletsLeft = MaxMagAmmo - MagAmmo;
 		
 		// Bullets that is left over to reload
-		int32 BulletsToReload = FMath::Min(BulletsLeft, CurrentAmmo);
+		int32 BulletsToReload = FMath::Min(BulletsLeft, Ammo);
 		
 		MagAmmo += BulletsToReload;
-		CurrentAmmo -= BulletsToReload;
+		Ammo -= BulletsToReload;
 		
 		// Clamp these values so that the ammo won't go over the limit
 		MagAmmo = FMath::Clamp(MagAmmo, 0, MaxMagAmmo);
-		CurrentAmmo = FMath::Clamp(CurrentAmmo, 0, MaxAmmoCapacity);
+		Ammo = FMath::Clamp(Ammo, 0, MaxAmmoCapacity);
 		
 		// Update the ammo counter once the weapon is reloaded
-		OnAmmoChanged.Broadcast(MagAmmo, CurrentAmmo);
+		OnAmmoChanged.Broadcast(MagAmmo, Ammo);
 		
-		if (CurrentAmmo == 0)
+		if (Ammo == 0)
 		{
 			UE_LOG(LogTemp, Display, TEXT("You ran out of ammo"));
 		}

@@ -75,15 +75,15 @@ public:
 	bool DoesGrow;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
-	int32 CurrentAmmo;
+	int32 Ammo;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
+	UPROPERTY(BlueprintReadWrite, Category=Gameplay)
 	int32 MaxAmmoCapacity;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
 	int32 MagAmmo;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
+	UPROPERTY(BlueprintReadWrite, Category=Gameplay)
 	int32 MaxMagAmmo;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)

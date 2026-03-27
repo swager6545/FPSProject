@@ -11,7 +11,7 @@ void UAmmoWidget::OnAmmoChanged(int32 NewMagAmmo, int32 NewCurrentAmmo)
 	if (TargetWeaponComponent != nullptr)
 	{
 		NewMagAmmo = TargetWeaponComponent->MagAmmo;
-		NewCurrentAmmo = TargetWeaponComponent->CurrentAmmo;
+		NewCurrentAmmo = TargetWeaponComponent->Ammo;
 		if (AmmoTextBlock)
 		{
 			//change the text to show the amount of ammo the player has

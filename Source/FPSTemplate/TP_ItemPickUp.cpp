@@ -129,11 +129,7 @@ void ATP_ItemPickUp::InitializePickup()
 		}
 		
 		//build the item definition object based from the data table row
-		ReferenceItem = NewObject<UItemDefinition>(this);
-		ReferenceItem->ID = ItemDataRow->ID;
-		ReferenceItem->ItemType = ItemDataRow->ItemType;
-		ReferenceItem->ItemText = ItemDataRow->ItemText;
-		ReferenceItem->WorldMesh = TempItemDefinition->WorldMesh;
+		ReferenceItem = TempItemDefinition->CreateItemCopy(this);
 		
 		//loads static mesh if it exists
 		UStaticMesh* LoadedMesh = TempItemDefinition->WorldMesh.IsValid()

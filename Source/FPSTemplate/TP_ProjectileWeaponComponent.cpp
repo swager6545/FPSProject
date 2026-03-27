@@ -34,9 +34,8 @@ void UTP_ProjectileWeaponComponent::Fire()
 				ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
 	
 				// Spawn the projectile at the muzzle
-				AFPSTemplateProjectile* BulletProjectile = World->SpawnActor<AFPSTemplateProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
-			
-				if (BulletProjectile)
+
+				if (AFPSTemplateProjectile* BulletProjectile = World->SpawnActor<AFPSTemplateProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams))
 				{
 					BulletProjectile->SetOwningWeapon(this);
 				}
@@ -60,11 +59,11 @@ void UTP_ProjectileWeaponComponent::Fire()
 				
 				//decrement the ammo once fired
 				MagAmmo -= 1;
-				OnAmmoChanged.Broadcast(MagAmmo, CurrentAmmo);
+				OnAmmoChanged.Broadcast(MagAmmo, Ammo);
 			}
 		}
 	}
-	else if (CurrentAmmo > 0)
+	else if (Ammo > 0)
 	{
 		Reload();
 	}
