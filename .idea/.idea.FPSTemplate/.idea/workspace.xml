@@ -13,17 +13,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e91e1c93-597e-4d32-93b5-cd039b7ad70d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/FPSTemplate/ItemDefinition.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileWeaponComponent.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileWeaponComponent.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileWeaponPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileWeaponPickUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/AmmoWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/AmmoWidget.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/ItemDefinition.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/ItemDefinition.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Data/DT_PickupData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Data/DT_PickupData.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPSTemplate.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/FPSTemplate.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/ItemData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/ItemData.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_ItemPickUp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_ItemPickUp.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_ProjectileWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_ProjectileWeaponComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponPickUp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponPickUp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponPickUp.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponPickUp.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +52,9 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="cidr-memory-view://19" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/CoreUObject/Public/UObject/Object.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/Components/ActorComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/UMG/Public/Components/ProgressBar.h" root0="FORCE_HIGHLIGHTING" />
@@ -58,10 +64,12 @@
     <setting file="file://$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponPickUp.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponPickUp.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/FPSTemplate/WeaponDefinition.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/FPSTemplate/WeaponDefinition.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -73,7 +81,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;C/C++ Project.FPSTemplate.executor&quot;: &quot;Run&quot;,
+    &quot;C/C++ Project.FPSTemplate.executor&quot;: &quot;Debug&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
@@ -230,7 +238,8 @@
       <workItem from="1774438581419" duration="15333000" />
       <workItem from="1774622288439" duration="467000" />
       <workItem from="1774623588399" duration="1179000" />
-      <workItem from="1774647563003" duration="767000" />
+      <workItem from="1774647563003" duration="8516000" />
+      <workItem from="1774692965585" duration="9480000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored the code">
       <option name="closed" value="true" />
@@ -328,7 +337,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774007328070</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Refactored the item pick up script and improved ammo functionality.">
+      <option name="closed" value="true" />
+      <created>1774648610859</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1774648610859</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,7 +367,8 @@
     <MESSAGE value="Improved the reload code" />
     <MESSAGE value="Added fixes to the reload function" />
     <MESSAGE value="Added an item script" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added an item script" />
+    <MESSAGE value="Refactored the item pick up script and improved ammo functionality." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored the item pick up script and improved ammo functionality." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -367,6 +385,41 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp</url>
+          <line>79</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp</url>
+          <line>87</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp</url>
+          <line>93</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp</url>
+          <line>96</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp</url>
+          <line>90</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp</url>
+          <line>84</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp</url>
+          <line>82</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -7,6 +7,8 @@
 #include "TP_WeaponComponent.generated.h"
 
 class AFPSTemplateCharacter;
+class ATP_WeaponPickUp;
+class UWeaponDefinition;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnAmmoChanged, int32, MagAmmo, int32, CurrentAmmo);
 
@@ -22,7 +24,7 @@ public:
 
 	/** Attaches the actor to a FirstPersonCharacter */
 	UFUNCTION(BlueprintCallable, Category="Weapon")
-	bool AttachWeapon(AFPSTemplateCharacter* TargetCharacter);
+	bool AttachWeapon(AFPSTemplateCharacter* TargetCharacter, UWeaponDefinition* WeaponDefinition);
 	
 	UFUNCTION()
 	void UpdateDamage(FHitResult OutHit) const;
@@ -91,6 +93,9 @@ public:
 	
 	UPROPERTY(BlueprintAssignable, Category=Weapons)
 	FOnAmmoChanged OnAmmoChanged;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Weapons")
+	ATP_WeaponPickUp* CurrentWeapon;
 	
 protected:
 	/** Ends gameplay for this component. */

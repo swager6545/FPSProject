@@ -14,6 +14,11 @@ class UInputAction;
 class UInputMappingContext;
 struct FInputActionValue;
 
+class UItemDefinition;
+class UTP_WeaponComponent;
+class UWeaponDefinition;
+class UInventoryComponent;
+
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(config=Game)
@@ -47,6 +52,18 @@ class AFPSTemplateCharacter : public ACharacter
 	
 public:
 	AFPSTemplateCharacter();
+	
+	UFUNCTION()
+	bool IsWeaponEquipped(UWeaponDefinition* WeaponDefinition);
+	
+	UFUNCTION()
+	void GiveItem(UItemDefinition* ItemDefinition);
+	
+	UPROPERTY(VisibleAnywhere, Category = "Inventory")
+	TObjectPtr<UInventoryComponent> InventoryComponent;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Weapons")
+	UTP_WeaponComponent* WeaponComp;
 
 protected:
 	/** Called for movement input */

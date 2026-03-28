@@ -49,6 +49,8 @@ void ATP_ItemPickUp::OnSphereBeginOverlap(UPrimitiveComponent* OverlappedCompone
 	
 	if (Character != nullptr)
 	{
+		Character->GiveItem(ReferenceItem);
+		
 		//set the pickup as invisible once the player touches it
 		PickupMeshComponent->SetVisibility(false);
 		PickupMeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);

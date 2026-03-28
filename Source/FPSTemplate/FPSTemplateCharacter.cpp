@@ -1,7 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "FPSTemplateCharacter.h"
-#include "FPSTemplateProjectile.h"
 #include "Animation/AnimInstance.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -10,6 +9,10 @@
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
 #include "Engine/LocalPlayer.h"
+#include "InventoryComponent.h"
+#include "WeaponDefinition.h"
+#include "TP_WeaponComponent.h"
+#include "TP_WeaponPickUp.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -34,7 +37,59 @@ AFPSTemplateCharacter::AFPSTemplateCharacter()
 	Mesh1P->bCastDynamicShadow = false;
 	Mesh1P->CastShadow = false;
 	Mesh1P->SetRelativeLocation(FVector(-30.f, 0.f, -150.f));
+	
+	//create inventory component
+	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
+	
+	WeaponComp = CreateDefaultSubobject<UTP_WeaponComponent>(TEXT("WeaponComponent"));
 
+}
+
+bool AFPSTemplateCharacter::IsWeaponEquipped(UWeaponDefinition* WeaponDefinition)
+{
+	for (UWeaponDefinition* InventoryItem : InventoryComponent->WeaponInventory)
+	{
+		if (WeaponDefinition->ID == InventoryItem->ID)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+void AFPSTemplateCharacter::GiveItem(UItemDefinition* ItemDefinition)
+{
+	switch (ItemDefinition->ItemType)
+	{
+	case EItemType::Item:
+		{
+			//does nothing as of now
+			break;
+		}
+		
+	case EItemType::Consumable:
+		{
+			//might be used for potions
+			break;
+		}
+	case EItemType::Weapon:
+		{
+			//if the item type is weapon, it will cast it as an item definition and attach itself to the owning player
+			UWeaponDefinition* WeaponDefinition = Cast<UWeaponDefinition>(ItemDefinition);
+			
+			if (WeaponDefinition != nullptr)
+			{
+				if (WeaponComp)
+				{
+					WeaponComp->AttachWeapon(this, WeaponDefinition);
+				}
+			}
+			break;
+		}
+		
+	default:
+		break;
+	}
 }
 
 //////////////////////////////////////////////////////////////////////////// Input

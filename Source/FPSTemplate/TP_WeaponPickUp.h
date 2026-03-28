@@ -16,19 +16,14 @@ class FPSTEMPLATE_API ATP_WeaponPickUp : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ATP_WeaponPickUp();
-
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
 	
-	UFUNCTION()
-	void AttachWeapon(AFPSTemplateCharacter* PickUpCharacter);
-
-public:	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GamePlay)
 	UTP_PickUpComponent* PickUpComp;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Weapon)
 	UTP_WeaponComponent* WeaponPickUp;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	AFPSTemplateCharacter* OwningCharacter;
 
 };

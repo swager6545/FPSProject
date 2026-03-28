@@ -2,6 +2,9 @@
 
 
 #include "TP_WeaponComponent.h"
+
+#include <filesystem>
+
 #include "FPSTemplateCharacter.h"
 #include "GameFramework/PlayerController.h"
 #include "Camera/PlayerCameraManager.h"
@@ -11,6 +14,9 @@
 #include "Engine/LocalPlayer.h"
 #include "Engine/World.h"
 #include "HealthComponent.h"
+#include "InventoryComponent.h"
+#include "TP_WeaponPickUp.h"
+#include "WeaponDefinition.h"
 
 // Sets default values for this component's properties
 UTP_WeaponComponent::UTP_WeaponComponent()
@@ -31,53 +37,65 @@ UTP_WeaponComponent::UTP_WeaponComponent()
 	MagAmmo = MaxMagAmmo;
 }
 
-bool UTP_WeaponComponent::AttachWeapon(AFPSTemplateCharacter* TargetCharacter)
+bool UTP_WeaponComponent::AttachWeapon(AFPSTemplateCharacter* TargetCharacter, UWeaponDefinition* WeaponDefinition)
 {
 	Character = TargetCharacter;
-
+	
 	// Check that the character is valid, and has no weapon component yet
-	if (Character == nullptr || Character->GetInstanceComponents().FindItemByClass<UTP_WeaponComponent>())
+	if (Character == nullptr || WeaponDefinition == nullptr)
 	{
 		return false;
 	}
+	
+	if (!TargetCharacter->IsWeaponEquipped(WeaponDefinition))
+	{
+		//spawn the weapon pickup to appear on the character
+		ATP_WeaponPickUp* WeaponToEquip = 
+	GetWorld()->SpawnActor<ATP_WeaponPickUp>(WeaponDefinition->WeaponAsset, Character->GetActorTransform());
 
-	// Attach the weapon to the First Person Character
-	FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
-	AttachToComponent(Character->GetMesh1P(), AttachmentRules, FName(TEXT("GripPoint")));
+		// Attach the weapon to the First Person Character
+		FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
+		WeaponToEquip->AttachToComponent(Character->GetMesh1P(), AttachmentRules, FName(TEXT("GripPoint")));
+		
+		//add the weapon to the inventory
+		TargetCharacter->InventoryComponent->WeaponInventory.Add(WeaponDefinition);
+		WeaponToEquip->OwningCharacter = TargetCharacter;
+		CurrentWeapon = WeaponToEquip;
 	
-	// Set the maximum ammo capacity
-	if (Ammo >= MaxAmmoCapacity)
-	{
-		Ammo = MaxAmmoCapacity;
-	}
-	
-	// Set the maximum mag capacity
-	if (MagAmmo >= MaxMagAmmo)
-	{
-		MagAmmo = MaxMagAmmo;
-	}
-	
-	// Subtract the current ammo with the mag ammo so that it accurately show how many bullets the player has
-	Ammo = Ammo - MagAmmo;
-	
-	OnAmmoChanged.Broadcast(MagAmmo, Ammo);
-
-	// Set up action bindings
-	if (APlayerController* PlayerController = Cast<APlayerController>(Character->GetController()))
-	{
-		if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
+		// Set the maximum ammo capacity
+		if (Ammo >= MaxAmmoCapacity)
 		{
-			// Set the priority of the mapping to 1, so that it overrides the Jump action with the Fire action when using touch input
-			Subsystem->AddMappingContext(FireMappingContext, 1);
+			Ammo = MaxAmmoCapacity;
 		}
-
-		if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerController->InputComponent))
+	
+		// Set the maximum mag capacity
+		if (MagAmmo >= MaxMagAmmo)
 		{
-			// Fire
-			EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Triggered, this, &UTP_WeaponComponent::Fire);
+			MagAmmo = MaxMagAmmo;
+		}
+	
+		// Subtract the current ammo with the mag ammo so that it accurately show how many bullets the player has
+		Ammo = Ammo - MagAmmo;
+	
+		OnAmmoChanged.Broadcast(MagAmmo, Ammo);
+		
+		// Set up action bindings
+		if (APlayerController* PlayerController = Cast<APlayerController>(Character->GetController()))
+		{
+			if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
+			{
+				// Set the priority of the mapping to 1, so that it overrides the Jump action with the Fire action when using touch input
+				Subsystem->AddMappingContext(FireMappingContext, 1);
+			}
+
+			if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerController->InputComponent))
+			{
+				// Fire
+				EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Triggered, this, &UTP_WeaponComponent::Fire);
 			
-			// Reload
-			EnhancedInputComponent->BindAction(ReloadAction, ETriggerEvent::Completed, this, &UTP_WeaponComponent::Reload);
+				// Reload
+				EnhancedInputComponent->BindAction(ReloadAction, ETriggerEvent::Completed, this, &UTP_WeaponComponent::Reload);
+			}
 		}
 	}
 	return true;
