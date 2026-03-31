@@ -14,8 +14,7 @@ class FPSTEMPLATE_API ATP_WeaponPickUp : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
-	ATP_WeaponPickUp();
+	virtual void BeginPlay() override;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GamePlay)
 	UTP_PickUpComponent* PickUpComp;

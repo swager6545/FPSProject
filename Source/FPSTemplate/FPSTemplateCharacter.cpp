@@ -79,9 +79,23 @@ void AFPSTemplateCharacter::GiveItem(UItemDefinition* ItemDefinition)
 			
 			if (WeaponDefinition != nullptr)
 			{
-				if (WeaponComp)
+				if (!IsWeaponEquipped(WeaponDefinition))
 				{
-					WeaponComp->AttachWeapon(this, WeaponDefinition);
+					//add the weapon to the inventory
+					InventoryComponent->WeaponInventory.Add(WeaponDefinition);
+					
+					//spawn the weapon pickup to appear on the character
+					ATP_WeaponPickUp* WeaponToEquip = 
+				GetWorld()->SpawnActor<ATP_WeaponPickUp>(WeaponDefinition->WeaponAsset, GetActorTransform());
+					
+					// Attach the weapon to the First Person Character
+					WeaponToEquip->OwningCharacter = this;
+					FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
+					WeaponToEquip->AttachToComponent(GetMesh1P(), AttachmentRules, FName(TEXT("GripPoint")));
+					if (WeaponToEquip->WeaponPickUp)
+					{
+						WeaponToEquip->WeaponPickUp->AttachWeapon(this, WeaponDefinition);
+					}
 				}
 			}
 			break;

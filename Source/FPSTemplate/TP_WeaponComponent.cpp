@@ -47,21 +47,6 @@ bool UTP_WeaponComponent::AttachWeapon(AFPSTemplateCharacter* TargetCharacter, U
 		return false;
 	}
 	
-	if (!TargetCharacter->IsWeaponEquipped(WeaponDefinition))
-	{
-		//spawn the weapon pickup to appear on the character
-		ATP_WeaponPickUp* WeaponToEquip = 
-	GetWorld()->SpawnActor<ATP_WeaponPickUp>(WeaponDefinition->WeaponAsset, Character->GetActorTransform());
-
-		// Attach the weapon to the First Person Character
-		FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
-		WeaponToEquip->AttachToComponent(Character->GetMesh1P(), AttachmentRules, FName(TEXT("GripPoint")));
-		
-		//add the weapon to the inventory
-		TargetCharacter->InventoryComponent->WeaponInventory.Add(WeaponDefinition);
-		WeaponToEquip->OwningCharacter = TargetCharacter;
-		CurrentWeapon = WeaponToEquip;
-	
 		// Set the maximum ammo capacity
 		if (Ammo >= MaxAmmoCapacity)
 		{
@@ -97,7 +82,6 @@ bool UTP_WeaponComponent::AttachWeapon(AFPSTemplateCharacter* TargetCharacter, U
 				EnhancedInputComponent->BindAction(ReloadAction, ETriggerEvent::Completed, this, &UTP_WeaponComponent::Reload);
 			}
 		}
-	}
 	return true;
 }
 

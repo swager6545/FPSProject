@@ -2,15 +2,11 @@
 
 
 #include "TP_WeaponPickUp.h"
-
-#include "EnhancedInputComponent.h"
 #include "TP_PickUpComponent.h"
 
-// Sets default values
-ATP_WeaponPickUp::ATP_WeaponPickUp()
+void ATP_WeaponPickUp::BeginPlay()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = false;
+	Super::BeginPlay();
 	
 	PickUpComp = FindComponentByClass<UTP_PickUpComponent>();
 	

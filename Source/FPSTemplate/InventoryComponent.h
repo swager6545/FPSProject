@@ -19,6 +19,7 @@ public:
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Weapons)
 	TArray<TObjectPtr<UWeaponDefinition>> WeaponInventory;
+	
 
 protected:
 	// Called when the game starts
