@@ -13,19 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e91e1c93-597e-4d32-93b5-cd039b7ad70d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileGunPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileGunPickUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileWeaponPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileWeaponPickUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayWeaponPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayWeaponPickUp.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Data/DT_PickupData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Data/DT_PickupData.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/0/2V/PJV88JSST6A3OUXGAYGSPQ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/7/PV/4DFP4NA792WCQLFVTM9234.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/7/PV/4DFP4NA792WCQLFVTM9234.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/A/AW/UTPWZQ085VD70GTIGWZB8T.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/HealthComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/HealthComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/InventoryComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/InventoryComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponPickUp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponPickUp.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponPickUp.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponPickUp.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,11 +43,14 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="cidr-memory-view://54" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/CoreUObject/Public/UObject/Object.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/Components/ActorComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/UMG/Public/Components/ProgressBar.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/FPSTemplate/UHT/HealthComponent.generated.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/FPSTemplate/HealthConsumable.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/FPSTemplate/ItemDefinition.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/FPSTemplate/TP_ProjectileWeaponComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/FPSTemplate/TP_ProjectileWeaponComponent.h" root0="FORCE_HIGHLIGHTING" />
@@ -79,13 +74,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "C/C++ Project.FPSTemplate.executor": "Run",
+    "C/C++ Project.FPSTemplate.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "Inventory-Test",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -383,6 +378,21 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.cpp</url>
+          <line>86</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.cpp</url>
+          <line>82</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.cpp</url>
+          <line>79</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

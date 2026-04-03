@@ -13,6 +13,8 @@
 #include "WeaponDefinition.h"
 #include "TP_WeaponComponent.h"
 #include "TP_WeaponPickUp.h"
+#include "ConsumableDefinition.h"
+#include "ConsumableBase.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -70,6 +72,22 @@ void AFPSTemplateCharacter::GiveItem(UItemDefinition* ItemDefinition)
 	case EItemType::Consumable:
 		{
 			//might be used for potions
+			UConsumableDefinition* ConsumableDefinition = Cast<UConsumableDefinition>(ItemDefinition);
+			
+			if (ConsumableDefinition != nullptr)
+			{
+				//add consumable to inventory
+			InventoryComponent->ConsumableInventory.Add(ConsumableDefinition);
+				
+				//add a new instance of the consumable to be readable for this class
+				AConsumableBase* Consumable = GetWorld()->SpawnActor<AConsumableBase>(ConsumableDefinition->ConsumableAsset);
+				
+				if (Consumable)
+				{
+					Consumable->Consume();
+				}
+			}
+			
 			break;
 		}
 	case EItemType::Weapon:

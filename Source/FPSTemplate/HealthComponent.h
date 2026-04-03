@@ -13,6 +13,10 @@ UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class FPSTEMPLATE_API UHealthComponent : public UActorComponent
 {
 	GENERATED_BODY()
+
+public:	
+	// Sets default values for this component's properties
+	UHealthComponent();
 	
 	//current health
 	UPROPERTY()
@@ -21,10 +25,6 @@ class FPSTEMPLATE_API UHealthComponent : public UActorComponent
 	//max health
 	UPROPERTY(EditDefaultsOnly, Category = "Health")
 	float MaxHealth;
-
-public:	
-	// Sets default values for this component's properties
-	UHealthComponent();
 	
 	UPROPERTY(BlueprintAssignable, Category = "Health")
 	FOnHealthChanged OnHealthChanged;

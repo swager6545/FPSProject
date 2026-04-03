@@ -17,6 +17,8 @@ struct FInputActionValue;
 class UItemDefinition;
 class UTP_WeaponComponent;
 class UWeaponDefinition;
+class UConsumableDefinition;
+class AConsumableBase;
 class UInventoryComponent;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);

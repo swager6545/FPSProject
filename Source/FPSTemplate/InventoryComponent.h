@@ -6,6 +6,7 @@
 #include "Components/ActorComponent.h"
 #include "InventoryComponent.generated.h"
 
+class UConsumableDefinition;
 class UWeaponDefinition;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -19,6 +20,9 @@ public:
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Weapons)
 	TArray<TObjectPtr<UWeaponDefinition>> WeaponInventory;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Consumables)
+	TArray<TObjectPtr<UConsumableDefinition>> ConsumableInventory;
 	
 
 protected:
