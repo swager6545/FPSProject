@@ -5,11 +5,19 @@
 
 #include "HealthComponent.h"
 
+void AHealthConsumable::BeginPlay()
+{
+	Super::BeginPlay();
+	
+	//set the timer for the amount of time the health goes up by every 2 seconds
+	GetWorld()->GetTimerManager().SetTimer(HealthTimerHandle, this, &AHealthConsumable::Consume, 2, true);
+}
+
 void AHealthConsumable::Consume()
 {
 	Super::Consume();
 	
-	AddHealth(10);
+	AddHealth(5);
 }
 
 void AHealthConsumable::AddHealth(int32 Amount)
@@ -17,6 +25,9 @@ void AHealthConsumable::AddHealth(int32 Amount)
 	AActor* PlayerActor = Cast<AFPSTemplateCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
 	
 	UHealthComponent* HealthComp = PlayerActor->GetComponentByClass<UHealthComponent>();
+	
+	//increments the timer to update every second the function is called until the timer handle is clear
+	++HealthTimerLimit;
 	
 	if (HealthComp != nullptr)
 	{
@@ -29,5 +40,15 @@ void AHealthConsumable::AddHealth(int32 Amount)
 		{
 			GEngine->AddOnScreenDebugMessage(0, 2.f, FColor::Blue, TEXT("Your Health is full"));
 		}
+		
+		//once the time limit hits 5 seconds, it will stop and clear the timer
+		if (HealthTimerLimit >= 5)
+		{
+			//clear the timer once it hits 5 seconds
+			GetWorld()->GetTimerManager().ClearTimer(HealthTimerHandle);
+			
+			GEngine->AddOnScreenDebugMessage(0, 2.f, FColor::Red, TEXT("Time is up!"));
+		}
 	}
 }
+

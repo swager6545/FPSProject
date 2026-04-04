@@ -18,6 +18,13 @@ void UHealthBarWidget::OnHealthChanged(float NewHealth, float MaxHealth)
 	{
 		HealthBar->SetFillColorAndOpacity(FLinearColor::Yellow);
 	}
+	else
+	{
+		//this is there so that the health pickups properly update with the health bar colours
+		HealthBar->SetFillColorAndOpacity(FColor::FromHex("00BCFFFF"));
+	}
+	
+	
 	//if health is at 25% the health bar colour changes to red
 	if (Percentage <= 0.25)
 	{

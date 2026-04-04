@@ -17,7 +17,9 @@ class FPSTEMPLATE_API AHealthConsumable : public AConsumableBase
 	FTimerHandle HealthTimerHandle;
 	
 	//this will be used to set the time for the healing effect
-	float HealthTimerLimit = 10;
+	float HealthTimerLimit = 0;
+	
+	virtual void BeginPlay() override;
 	
 	virtual void Consume() override;
 	
