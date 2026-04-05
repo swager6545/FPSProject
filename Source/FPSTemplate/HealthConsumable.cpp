@@ -22,12 +22,14 @@ void AHealthConsumable::Consume()
 
 void AHealthConsumable::AddHealth(int32 Amount)
 {
+	//connect this function to the player once they pick up the potion
 	AActor* PlayerActor = Cast<AFPSTemplateCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
-	
 	UHealthComponent* HealthComp = PlayerActor->GetComponentByClass<UHealthComponent>();
 	
 	//increments the timer to update every second the function is called until the timer handle is clear
-	++HealthTimerLimit;
+	++HealthTimer;
+	
+	UE_LOG(LogTemp, Display, TEXT("Health Timer: %f"), HealthTimer);
 	
 	if (HealthComp != nullptr)
 	{
@@ -42,7 +44,7 @@ void AHealthConsumable::AddHealth(int32 Amount)
 		}
 		
 		//once the time limit hits 5 seconds, it will stop and clear the timer
-		if (HealthTimerLimit >= 5)
+		if (HealthTimer >= 5)
 		{
 			//clear the timer once it hits 5 seconds
 			GetWorld()->GetTimerManager().ClearTimer(HealthTimerHandle);

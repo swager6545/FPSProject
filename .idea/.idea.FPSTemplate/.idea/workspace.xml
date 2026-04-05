@@ -14,7 +14,17 @@
   <component name="ChangeListManager">
     <list default="true" id="e91e1c93-597e-4d32-93b5-cd039b7ad70d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/HealthBarWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/HealthBarWidget.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_HealthConsumable.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_HealthPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_HealthPickUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ItemPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ItemPickUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileGunPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_ProjectileGunPickUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayGunPickup.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayGunPickup.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayWeapon.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_RayWeapon.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Data/DA_HealthPotion.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Data/DA_HealthPotion.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Data/DT_PickupData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Data/DT_PickupData.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/5/8A/DZC52NTGT2K3YC9WIXYORW.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/5/8A/DZC52NTGT2K3YC9WIXYORW.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/7/XX/JPNSPHK3QBDCYGW8CF6L2V.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/7/XX/JPNSPHK3QBDCYGW8CF6L2V.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/HealthConsumable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/HealthConsumable.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/HealthConsumable.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/HealthConsumable.h" afterDir="false" />
     </list>
@@ -42,7 +52,6 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="cidr-memory-view://54" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/CoreUObject/Public/UObject/Object.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/Components/ActorComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
@@ -232,7 +241,8 @@
       <workItem from="1774623588399" duration="1179000" />
       <workItem from="1774647563003" duration="8516000" />
       <workItem from="1774692965585" duration="9480000" />
-      <workItem from="1775295267245" duration="2462000" />
+      <workItem from="1775295267245" duration="3490000" />
+      <workItem from="1775399925814" duration="10163000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored the code">
       <option name="closed" value="true" />
@@ -346,7 +356,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775237097170</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added a timer to the health pickup">
+      <option name="closed" value="true" />
+      <created>1775297801551</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1775297801551</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,7 +388,8 @@
     <MESSAGE value="Added an item script" />
     <MESSAGE value="Refactored the item pick up script and improved ammo functionality." />
     <MESSAGE value="Added potion assets and a working consumable item" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added potion assets and a working consumable item" />
+    <MESSAGE value="Added a timer to the health pickup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a timer to the health pickup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

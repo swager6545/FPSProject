@@ -4,25 +4,24 @@
 
 #include "CoreMinimal.h"
 #include "ConsumableBase.h"
-#include "HealthConsumable.generated.h"
+#include "SpeedConsumable.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class FPSTEMPLATE_API AHealthConsumable : public AConsumableBase
+class FPSTEMPLATE_API ASpeedConsumable : public AConsumableBase
 {
 	GENERATED_BODY()
 	
-	FTimerHandle HealthTimerHandle;
+	FTimerHandle SpeedTimerHandle;
 	
-	//this will be used to set the time for the healing effect
-	float HealthTimer = 0;
+	float SpeedTimer = 0;
 	
 	virtual void BeginPlay() override;
 	
 	virtual void Consume() override;
 	
-	void AddHealth(int32 Amount);
+	void IncreaseSpeed(float WalkSpeed);
 	
 };
