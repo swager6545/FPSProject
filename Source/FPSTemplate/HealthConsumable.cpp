@@ -10,7 +10,7 @@ void AHealthConsumable::BeginPlay()
 	Super::BeginPlay();
 	
 	//set the timer for the amount of time the health goes up by every 2 seconds
-	GetWorld()->GetTimerManager().SetTimer(HealthTimerHandle, this, &AHealthConsumable::Consume, 2, true);
+	GetWorld()->GetTimerManager().SetTimer(HealthTimerHandle, this, &AHealthConsumable::Consume, 1, true);
 }
 
 void AHealthConsumable::Consume()
@@ -27,7 +27,7 @@ void AHealthConsumable::AddHealth(int32 Amount)
 	UHealthComponent* HealthComp = PlayerActor->GetComponentByClass<UHealthComponent>();
 	
 	//increments the timer to update every second the function is called until the timer handle is clear
-	++HealthTimer;
+	HealthTimer++;
 	
 	UE_LOG(LogTemp, Display, TEXT("Health Timer: %f"), HealthTimer);
 	
