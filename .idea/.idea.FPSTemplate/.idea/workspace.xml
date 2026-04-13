@@ -14,9 +14,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e91e1c93-597e-4d32-93b5-cd039b7ad70d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_HealthPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_HealthPickUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_HighJumpPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_HighJumpPickUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_Mover.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_Mover.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_SpeedPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_SpeedPickUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_TestActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_TestActor.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/2/TP/VDEMGXRI7FEITXGK01KLN9.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/2/TP/VDEMGXRI7FEITXGK01KLN9.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/4/PT/ZXUQMNLL9GZ2UNQ5D0R4A4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/4/PT/ZXUQMNLL9GZ2UNQ5D0R4A4.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/7/PV/4DFP4NA792WCQLFVTM9234.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/7/PV/4DFP4NA792WCQLFVTM9234.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +51,8 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/UMG/Public/Components/ProgressBar.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/FPSTemplate/UHT/HealthComponent.generated.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/FPSTemplate/EasingFunctionLibrary.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/FPSTemplate/EasingFunctionLibrary.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/FPSTemplate/HealthConsumable.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/FPSTemplate/ItemDefinition.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/FPSTemplate/TP_ProjectileWeaponComponent.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -235,7 +240,7 @@
       <workItem from="1775399925814" duration="10779000" />
       <workItem from="1775485503001" duration="2681000" />
       <workItem from="1776075610856" duration="521000" />
-      <workItem from="1776079094554" duration="809000" />
+      <workItem from="1776079094554" duration="6534000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored the code">
       <option name="closed" value="true" />
@@ -365,7 +370,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775411851002</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Movable Objects">
+      <option name="closed" value="true" />
+      <created>1776084408948</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1776084408948</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,7 +404,8 @@
     <MESSAGE value="Added potion assets and a working consumable item" />
     <MESSAGE value="Added a timer to the health pickup" />
     <MESSAGE value="Added a speed potion to the game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a speed potion to the game" />
+    <MESSAGE value="Movable Objects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Movable Objects" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
