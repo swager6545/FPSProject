@@ -32,7 +32,7 @@ public:
 	static float EaseOut(float X);
 	
 	UFUNCTION(BlueprintCallable, BlueprintPure)
-	static float SmoothStep(float X, float Edge0, float Edge1);
+	static float SmoothStep(float X);
 	
 	UFUNCTION(BlueprintCallable, BlueprintPure)
 	static float ElasticIn(float T, float H, float B);
