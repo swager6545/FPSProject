@@ -51,12 +51,8 @@ protected:
 	FTimerHandle RespawnTimerHandle;
 	
 #if WITH_EDITOR
-	
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
-	
 #endif
-	
-
 
 public:	
 	// Called every frame

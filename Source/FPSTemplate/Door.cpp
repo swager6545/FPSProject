@@ -34,11 +34,8 @@ void ADoor::OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor
 	DoorTimelineComp->Reverse();
 }
 
-// Called when the game starts or when spawned
-void ADoor::BeginPlay()
+void ADoor::OpenDoor()
 {
-	Super::BeginPlay();
-	
 	//bind float track to the update timeline function
 	UpdateFunctionFloat.BindDynamic(this, &ADoor::UpdateTimelineComp);
 	
@@ -51,13 +48,6 @@ void ADoor::BeginPlay()
 	//bind the proximity box component to the overlap functions
 	DoorProxVolume->OnComponentBeginOverlap.AddDynamic(this, &ADoor::OnOverlapBegin);
 	DoorProxVolume->OnComponentEndOverlap.AddDynamic(this, &ADoor::OnOverlapEnd);
-}
-
-// Called every frame
-void ADoor::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
 }
 
 void ADoor::UpdateTimelineComp(float Output)
