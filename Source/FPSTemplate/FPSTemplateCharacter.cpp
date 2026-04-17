@@ -112,7 +112,7 @@ void AFPSTemplateCharacter::GiveItem(UItemDefinition* ItemDefinition)
 					WeaponToEquip->AttachToComponent(GetMesh1P(), AttachmentRules, FName(TEXT("GripPoint")));
 					if (WeaponToEquip->WeaponPickUp)
 					{
-						WeaponToEquip->WeaponPickUp->AttachWeapon(this, WeaponDefinition);
+						WeaponToEquip->WeaponPickUp->SetupWeaponControls(this, WeaponDefinition);
 					}
 				}
 			}

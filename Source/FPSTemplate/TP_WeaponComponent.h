@@ -24,7 +24,10 @@ public:
 
 	/** Attaches the actor to a FirstPersonCharacter */
 	UFUNCTION(BlueprintCallable, Category="Weapon")
-	bool AttachWeapon(AFPSTemplateCharacter* TargetCharacter, UWeaponDefinition* WeaponDefinition);
+	bool SetupWeaponControls(AFPSTemplateCharacter* TargetCharacter, UWeaponDefinition* WeaponDefinition);
+	
+	UFUNCTION()
+	void DisplayAmmoUI();
 	
 	UFUNCTION()
 	void UpdateDamage(FHitResult OutHit) const;
