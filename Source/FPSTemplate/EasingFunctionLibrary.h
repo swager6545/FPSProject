@@ -16,8 +16,7 @@ enum class EEasingFunctionName : uint8
 	None UMETA(DisplayName = "None"),
 	EaseIn UMETA(DisplayName = "EaseIn"),
 	EaseOut UMETA(DisplayName = "EaseOut"),
-	SmoothStep UMETA(DisplayName = "SmoothStep"),
-	ElasticIn UMETA(DisplayName = "ElasticIn")
+	EaseInOut UMETA(DisplayName = "EaseInOut"),
 };
 UCLASS()
 class FPSTEMPLATE_API UEasingFunctionLibrary : public UBlueprintFunctionLibrary
@@ -32,12 +31,9 @@ public:
 	static float EaseOut(float X);
 	
 	UFUNCTION(BlueprintCallable, BlueprintPure)
-	static float SmoothStep(float X);
-	
-	UFUNCTION(BlueprintCallable, BlueprintPure)
-	static float ElasticIn(float T, float H, float B);
+	static float EaseInOut(float X);
 	
 	UFUNCTION(BlueprintCallable)
-	static float FunctionSelection(EEasingFunctionName Name, float Input_, float Input2_, float Input3_);
+	static float FunctionSelection(EEasingFunctionName Name, float Input_);
 	
 };
