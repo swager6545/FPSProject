@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "TP_PickUpComponent.h"
+#include "PickUpComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "ConsumableBase.generated.h"
 
@@ -18,7 +18,7 @@ public:
 	AConsumableBase();
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GamePlay)
-	UTP_PickUpComponent* PickUpComp;
+	UPickUpComponent* PickUpComp;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GamePlay)
 	UStaticMeshComponent* ConsumableMesh;

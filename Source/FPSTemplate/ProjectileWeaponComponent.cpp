@@ -1,12 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "TP_ProjectileWeaponComponent.h"
+#include "ProjectileWeaponComponent.h"
 #include "FPSTemplateCharacter.h"
 #include "FPSTemplateProjectile.h"
 #include "Kismet/GameplayStatics.h"
 
-void UTP_ProjectileWeaponComponent::Fire()
+void UProjectileWeaponComponent::Fire()
 {
 	Super::Fire();
 	

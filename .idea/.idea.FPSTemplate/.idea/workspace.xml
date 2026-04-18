@@ -19,12 +19,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e91e1c93-597e-4d32-93b5-cd039b7ad70d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/A/91/GK61PFLDPEX956V80S2JNK.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/A/91/GK61PFLDPEX956V80S2JNK.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/F/24/83V0ODSOOGYPWASGJH71F3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/F/24/83V0ODSOOGYPWASGJH71F3.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/AmmoWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/AmmoWidget.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/AmmoWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/AmmoWidget.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/ConsumableBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/ConsumableBase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/ConsumableBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/ConsumableBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/Door.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/Door.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateGameMode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateProjectile.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateProjectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateProjectile.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/HealthConsumable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/HealthConsumable.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/HighJumpConsumable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/HighJumpConsumable.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/SpeedConsumable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/SpeedConsumable.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_ItemPickUp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/ItemPickUp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_ItemPickUp.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/ItemPickUp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_PickUpComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/PickUpComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_PickUpComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/PickUpComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_ProjectileWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/ProjectileWeaponComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_ProjectileWeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/ProjectileWeaponComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/RayWeaponComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_RayWeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/RayWeaponComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/WeaponComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/WeaponComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponPickUp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/WeaponPickUp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/TP_WeaponPickUp.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/WeaponPickUp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/WeaponDefinition.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/WeaponDefinition.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,6 +278,7 @@
       <workItem from="1776173710917" duration="1385000" />
       <workItem from="1776249286376" duration="6556000" />
       <workItem from="1776421286161" duration="6162000" />
+      <workItem from="1776515465204" duration="2617000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored the code">
       <option name="closed" value="true" />
@@ -455,21 +478,6 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.cpp</url>
-          <line>86</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.cpp</url>
-          <line>82</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.cpp</url>
-          <line>79</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

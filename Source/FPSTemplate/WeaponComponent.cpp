@@ -1,7 +1,7 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 
-#include "TP_WeaponComponent.h"
+#include "WeaponComponent.h"
 #include "FPSTemplateCharacter.h"
 #include "GameFramework/PlayerController.h"
 #include "Camera/PlayerCameraManager.h"
@@ -13,7 +13,7 @@
 #include "HealthComponent.h"
 
 //sets default values for the component's properties
-UTP_WeaponComponent::UTP_WeaponComponent()
+UWeaponComponent::UWeaponComponent()
 {
 	//default offset from the character location for projectiles to spawn
 	MuzzleOffset = FVector(100.0f, 0.0f, 10.0f);
@@ -31,7 +31,7 @@ UTP_WeaponComponent::UTP_WeaponComponent()
 	MagAmmo = MaxMagAmmo;
 }
 
-bool UTP_WeaponComponent::SetupWeaponControls(AFPSTemplateCharacter* TargetCharacter, UWeaponDefinition* WeaponDefinition)
+bool UWeaponComponent::SetupWeaponControls(AFPSTemplateCharacter* TargetCharacter, UWeaponDefinition* WeaponDefinition)
 {
 	Character = TargetCharacter;
 	
@@ -56,16 +56,16 @@ bool UTP_WeaponComponent::SetupWeaponControls(AFPSTemplateCharacter* TargetChara
 		if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerController->InputComponent))
 		{
 			// Fire
-			EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Triggered, this, &UTP_WeaponComponent::Fire);
+			EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Triggered, this, &UWeaponComponent::Fire);
 			
 			// Reload
-			EnhancedInputComponent->BindAction(ReloadAction, ETriggerEvent::Completed, this, &UTP_WeaponComponent::Reload);
+			EnhancedInputComponent->BindAction(ReloadAction, ETriggerEvent::Completed, this, &UWeaponComponent::Reload);
 		}
 	}
 	return true;
 }
 
-void UTP_WeaponComponent::DisplayAmmoUI()
+void UWeaponComponent::DisplayAmmoUI()
 {
 	//set the maximum ammo capacity
 	if (Ammo >= MaxAmmoCapacity)
@@ -87,7 +87,7 @@ void UTP_WeaponComponent::DisplayAmmoUI()
 }
 
 
-void UTP_WeaponComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
+void UWeaponComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
 	// Ensure we have a character owner
 	if (Character != nullptr)
@@ -106,12 +106,12 @@ void UTP_WeaponComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
 	Super::EndPlay(EndPlayReason);
 }
 
-void UTP_WeaponComponent::Fire()
+void UWeaponComponent::Fire()
 {
 	//function will be overriden
 }
 
-void UTP_WeaponComponent::UpdateDamage(FHitResult OutHit) const
+void UWeaponComponent::UpdateDamage(FHitResult OutHit) const
 {
 	AActor* DamageActor = OutHit.GetActor();
 	
@@ -124,7 +124,7 @@ void UTP_WeaponComponent::UpdateDamage(FHitResult OutHit) const
 	}
 }
 
-void UTP_WeaponComponent::WeaponEffects(FHitResult OutHit) const
+void UWeaponComponent::WeaponEffects(FHitResult OutHit) const
 {
 	AActor* OtherActor = OutHit.GetActor();
 	UPrimitiveComponent* OtherComp = OutHit.GetComponent();
@@ -164,7 +164,7 @@ void UTP_WeaponComponent::WeaponEffects(FHitResult OutHit) const
 	
 }
 
-void UTP_WeaponComponent::Reload()
+void UWeaponComponent::Reload()
 {
 	if (MagAmmo < MaxMagAmmo &&  Ammo > 0)
 	{

@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Components\TimelineComponent.h"
+#include "Components/TimelineComponent.h"
 #include "Door.generated.h"
 
 UCLASS()

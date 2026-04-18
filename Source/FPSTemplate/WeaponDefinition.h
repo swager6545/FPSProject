@@ -6,7 +6,7 @@
 #include "ItemDefinition.h"
 #include "WeaponDefinition.generated.h"
 
-class ATP_WeaponPickUp;
+class AWeaponPickUp;
 
 /**
  * 
@@ -18,7 +18,7 @@ class FPSTEMPLATE_API UWeaponDefinition : public UItemDefinition
 	
 public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	TSubclassOf<ATP_WeaponPickUp> WeaponAsset;
+	TSubclassOf<AWeaponPickUp> WeaponAsset;
 	
 	virtual UWeaponDefinition* CreateItemCopy(UObject* Outer) const override;
 	

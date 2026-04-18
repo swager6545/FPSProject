@@ -3,16 +3,16 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "TP_WeaponComponent.h"
+#include "WeaponComponent.h"
 #include "NiagaraComponent.h"
 #include "NiagaraFunctionLibrary.h"
-#include "TP_RayWeaponComponent.generated.h"
+#include "RayWeaponComponent.generated.h"
 
 /**
  * 
  */
 UCLASS(Blueprintable, BlueprintType, ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
-class FPSTEMPLATE_API UTP_RayWeaponComponent : public UTP_WeaponComponent
+class FPSTEMPLATE_API URayWeaponComponent : public UWeaponComponent
 {
 	GENERATED_BODY()
 	

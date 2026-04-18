@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "TP_WeaponComponent.h"
-#include "TP_ProjectileWeaponComponent.generated.h"
+#include "WeaponComponent.h"
+#include "ProjectileWeaponComponent.generated.h"
 
 /**
  * 
  */
 UCLASS(Blueprintable, BlueprintType, ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class FPSTEMPLATE_API UTP_ProjectileWeaponComponent : public UTP_WeaponComponent
+class FPSTEMPLATE_API UProjectileWeaponComponent : public UWeaponComponent
 {
 	GENERATED_BODY()
 	

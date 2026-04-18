@@ -2,8 +2,6 @@
 
 
 #include "AmmoWidget.h"
-
-#include "LocalizationDescriptor.h"
 #include "Components/TextBlock.h"
 
 void UAmmoWidget::OnAmmoChanged(int32 NewMagAmmo, int32 NewCurrentAmmo)
@@ -20,7 +18,7 @@ void UAmmoWidget::OnAmmoChanged(int32 NewMagAmmo, int32 NewCurrentAmmo)
 	}
 }
 
-void UAmmoWidget::SetTargetWeaponComponent(UTP_WeaponComponent* NewWeaponComponent)
+void UAmmoWidget::SetTargetWeaponComponent(UWeaponComponent* NewWeaponComponent)
 {
 	//check if the target weapon component is the new weapon component
 	if (TargetWeaponComponent == NewWeaponComponent)

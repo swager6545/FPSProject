@@ -2,8 +2,7 @@
 
 
 #include "ConsumableBase.h"
-
-#include "TP_PickUpComponent.h"
+#include "PickUpComponent.h"
 
 // Sets default values
 AConsumableBase::AConsumableBase()
@@ -18,7 +17,7 @@ void AConsumableBase::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	PickUpComp = FindComponentByClass<UTP_PickUpComponent>();
+	PickUpComp = FindComponentByClass<UPickUpComponent>();
 	
 	if (PickUpComp != nullptr)
 	{

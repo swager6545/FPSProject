@@ -2,7 +2,6 @@
 
 
 #include "SpeedConsumable.h"
-
 #include "GameFramework/CharacterMovementComponent.h"
 
 void ASpeedConsumable::BeginPlay()

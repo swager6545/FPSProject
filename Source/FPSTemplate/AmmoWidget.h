@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "TP_WeaponComponent.h"
+#include "WeaponComponent.h"
 #include "Blueprint/UserWidget.h"
 #include "AmmoWidget.generated.h"
 
@@ -17,7 +17,7 @@ UCLASS()
 class FPSTEMPLATE_API UAmmoWidget : public UUserWidget
 {
 	GENERATED_BODY()
-	TWeakObjectPtr<UTP_WeaponComponent> TargetWeaponComponent;
+	TWeakObjectPtr<UWeaponComponent> TargetWeaponComponent;
 	
 	UFUNCTION()
 	void OnAmmoChanged(int32 NewMagAmmo, int32 NewCurrentAmmo);
@@ -28,6 +28,6 @@ protected:
 	
 public:
 	UFUNCTION(BlueprintCallable)
-	void SetTargetWeaponComponent(UTP_WeaponComponent* NewWeaponComponent);
+	void SetTargetWeaponComponent(UWeaponComponent* NewWeaponComponent);
 	
 };

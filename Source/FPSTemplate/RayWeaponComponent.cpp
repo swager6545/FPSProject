@@ -1,12 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "TP_RayWeaponComponent.h"
+#include "RayWeaponComponent.h"
 #include "FPSTemplateCharacter.h"
-#include "NiagaraDataInterfaceArrayFunctionLibrary.h"
 #include "Kismet/GameplayStatics.h"
 
-void UTP_RayWeaponComponent::Fire()
+void URayWeaponComponent::Fire()
 {
 	Super::Fire();
 	

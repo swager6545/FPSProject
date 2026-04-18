@@ -1,7 +1,7 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "FPSTemplateProjectile.h"
-#include "TP_WeaponComponent.h"
+#include "WeaponComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
 
@@ -32,7 +32,7 @@ AFPSTemplateProjectile::AFPSTemplateProjectile()
 	InitialLifeSpan = 3.0f;
 }
 
-void AFPSTemplateProjectile::SetOwningWeapon(UTP_WeaponComponent* newOwningWeapon)
+void AFPSTemplateProjectile::SetOwningWeapon(UWeaponComponent* newOwningWeapon)
 {
 	OwningWeapon = newOwningWeapon;
 }

@@ -6,7 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "FPSTemplateProjectile.generated.h"
 
-class UTP_WeaponComponent;
+class UWeaponComponent;
 class USphereComponent;
 class UProjectileMovementComponent;
 
@@ -24,12 +24,12 @@ class AFPSTemplateProjectile : public AActor
 	UProjectileMovementComponent* ProjectileMovement;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
-	UTP_WeaponComponent* OwningWeapon;
+	UWeaponComponent* OwningWeapon;
 
 public:
 	AFPSTemplateProjectile();
 	
-	void SetOwningWeapon(UTP_WeaponComponent* OwningWeapon);
+	void SetOwningWeapon(UWeaponComponent* OwningWeapon);
 
 	/** called when projectile hits something */
 	UFUNCTION()

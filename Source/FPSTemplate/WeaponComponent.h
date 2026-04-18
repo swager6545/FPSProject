@@ -4,39 +4,31 @@
 
 #include "CoreMinimal.h"
 #include "Components/SkeletalMeshComponent.h"
-#include "TP_WeaponComponent.generated.h"
+#include "WeaponComponent.generated.h"
 
 class AFPSTemplateCharacter;
-class ATP_WeaponPickUp;
 class UWeaponDefinition;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnAmmoChanged, int32, MagAmmo, int32, CurrentAmmo);
 
 UCLASS(Blueprintable, BlueprintType, ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class FPSTEMPLATE_API UTP_WeaponComponent : public USkeletalMeshComponent
+class FPSTEMPLATE_API UWeaponComponent : public USkeletalMeshComponent
 {
 	GENERATED_BODY()
 
 public:
 	
 	/** Sets default values for this component's properties */
-	UTP_WeaponComponent();
-
-	/** Attaches the actor to a FirstPersonCharacter */
+	UWeaponComponent();
+	
 	UFUNCTION(BlueprintCallable, Category="Weapon")
 	bool SetupWeaponControls(AFPSTemplateCharacter* TargetCharacter, UWeaponDefinition* WeaponDefinition);
-	
-	UFUNCTION()
-	void DisplayAmmoUI();
 	
 	UFUNCTION()
 	void UpdateDamage(FHitResult OutHit) const;
 	
 	UFUNCTION()
 	void WeaponEffects(FHitResult OutHit) const;
-	
-	UFUNCTION(BlueprintCallable, Category="Weapon")
-	void Reload();
 	
 	/** Sound to play each time we fire */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
@@ -97,9 +89,6 @@ public:
 	UPROPERTY(BlueprintAssignable, Category=Weapons)
 	FOnAmmoChanged OnAmmoChanged;
 	
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Weapons")
-	ATP_WeaponPickUp* CurrentWeapon;
-	
 protected:
 	/** Ends gameplay for this component. */
 	UFUNCTION()
@@ -108,6 +97,12 @@ protected:
 	/** Make the weapon Fire a Projectile */
 	UFUNCTION(BlueprintCallable, Category="Weapon")
 	virtual void Fire();
+	
+	UFUNCTION()
+	void DisplayAmmoUI();
+	
+	UFUNCTION(BlueprintCallable, Category="Weapon")
+	void Reload();
 	
 	/** The Character holding this weapon*/
 	AFPSTemplateCharacter* Character;

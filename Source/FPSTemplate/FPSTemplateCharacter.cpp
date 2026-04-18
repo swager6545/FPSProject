@@ -11,8 +11,8 @@
 #include "Engine/LocalPlayer.h"
 #include "InventoryComponent.h"
 #include "WeaponDefinition.h"
-#include "TP_WeaponComponent.h"
-#include "TP_WeaponPickUp.h"
+#include "WeaponComponent.h"
+#include "WeaponPickUp.h"
 #include "ConsumableDefinition.h"
 #include "ConsumableBase.h"
 
@@ -43,7 +43,7 @@ AFPSTemplateCharacter::AFPSTemplateCharacter()
 	//create inventory component
 	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
 	
-	WeaponComp = CreateDefaultSubobject<UTP_WeaponComponent>(TEXT("WeaponComponent"));
+	WeaponComp = CreateDefaultSubobject<UWeaponComponent>(TEXT("WeaponComponent"));
 
 }
 
@@ -103,8 +103,8 @@ void AFPSTemplateCharacter::GiveItem(UItemDefinition* ItemDefinition)
 					InventoryComponent->WeaponInventory.Add(WeaponDefinition);
 					
 					//spawn the weapon pickup to appear on the character
-					ATP_WeaponPickUp* WeaponToEquip = 
-				GetWorld()->SpawnActor<ATP_WeaponPickUp>(WeaponDefinition->WeaponAsset, GetActorTransform());
+					AWeaponPickUp* WeaponToEquip = 
+				GetWorld()->SpawnActor<AWeaponPickUp>(WeaponDefinition->WeaponAsset, GetActorTransform());
 					
 					// Attach the weapon to the First Person Character
 					WeaponToEquip->OwningCharacter = this;

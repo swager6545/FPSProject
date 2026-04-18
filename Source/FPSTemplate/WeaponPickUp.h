@@ -4,12 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "TP_WeaponComponent.h"
-#include "TP_PickUpComponent.h"
-#include "TP_WeaponPickUp.generated.h"
+#include "WeaponComponent.h"
+#include "PickUpComponent.h"
+#include "WeaponPickUp.generated.h"
 
 UCLASS()
-class FPSTEMPLATE_API ATP_WeaponPickUp : public AActor
+class FPSTEMPLATE_API AWeaponPickUp : public AActor
 {
 	GENERATED_BODY()
 	
@@ -17,10 +17,10 @@ public:
 	virtual void BeginPlay() override;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = GamePlay)
-	UTP_PickUpComponent* PickUpComp;
+	UPickUpComponent* PickUpComp;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Weapon)
-	UTP_WeaponComponent* WeaponPickUp;
+	UWeaponComponent* WeaponPickUp;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	AFPSTemplateCharacter* OwningCharacter;

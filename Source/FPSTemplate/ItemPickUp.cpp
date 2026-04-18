@@ -1,11 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "TP_ItemPickUp.h"
+#include "ItemPickUp.h"
 #include "ItemDefinition.h"
 #include "ItemData.h"
 
 // Sets default values
-ATP_ItemPickUp::ATP_ItemPickUp()
+AItemPickUp::AItemPickUp()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -15,7 +15,7 @@ ATP_ItemPickUp::ATP_ItemPickUp()
 	SetRootComponent(PickupMeshComponent);
 	
 	//allow the player to pickup items
-	PickUpComp = CreateDefaultSubobject<UTP_PickUpComponent>(TEXT("PickupComponent"));
+	PickUpComp = CreateDefaultSubobject<UPickUpComponent>(TEXT("PickupComponent"));
 	check(PickUpComp != nullptr);
 	PickUpComp->SetupAttachment(PickupMeshComponent);
 	PickUpComp->SetSphereRadius(32.f);
@@ -29,7 +29,7 @@ ATP_ItemPickUp::ATP_ItemPickUp()
 }
 
 // Called when the game starts or when spawned
-void ATP_ItemPickUp::BeginPlay()
+void AItemPickUp::BeginPlay()
 {
 	Super::BeginPlay();
 	
@@ -37,10 +37,10 @@ void ATP_ItemPickUp::BeginPlay()
 	
 	PickUpComp->OnComponentBeginOverlap.RemoveAll(this);
 	
-	PickUpComp->OnComponentBeginOverlap.AddDynamic(this, &ATP_ItemPickUp::OnSphereBeginOverlap);
+	PickUpComp->OnComponentBeginOverlap.AddDynamic(this, &AItemPickUp::OnSphereBeginOverlap);
 }
 
-void ATP_ItemPickUp::OnSphereBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+void AItemPickUp::OnSphereBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	AFPSTemplateCharacter* Character = Cast<AFPSTemplateCharacter>(OtherActor);
 	
@@ -60,12 +60,12 @@ void ATP_ItemPickUp::OnSphereBeginOverlap(UPrimitiveComponent* OverlappedCompone
 	//calling InitializePickup() to respawn it
 	if (bShouldRespawn)
 	{
-		GetWorldTimerManager().SetTimer(RespawnTimerHandle, this, &ATP_ItemPickUp::InitializePickup, RespawnTime, false);
+		GetWorldTimerManager().SetTimer(RespawnTimerHandle, this, &AItemPickUp::InitializePickup, RespawnTime, false);
 	}
 }
 
 //Update the pickup whenever the property changed
-void ATP_ItemPickUp::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
+void AItemPickUp::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
 {
 	Super::PostEditChangeProperty(PropertyChangedEvent);
 	
@@ -75,21 +75,21 @@ void ATP_ItemPickUp::PostEditChangeProperty(FPropertyChangedEvent& PropertyChang
 	: NAME_None;
 	
 	//check if the changed property is the affected item in this class
-	if (ChangedPropertyName == GET_MEMBER_NAME_CHECKED(ATP_ItemPickUp, PickupItemID) || 
-		ChangedPropertyName == GET_MEMBER_NAME_CHECKED(ATP_ItemPickUp, PickupDataTable))
+	if (ChangedPropertyName == GET_MEMBER_NAME_CHECKED(AItemPickUp, PickupItemID) || 
+		ChangedPropertyName == GET_MEMBER_NAME_CHECKED(AItemPickUp, PickupDataTable))
 	{
 		InitializePickup();
 	}
 }
 
 // Called every frame
-void ATP_ItemPickUp::Tick(float DeltaTime)
+void AItemPickUp::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
 
-void ATP_ItemPickUp::InitializePickup()
+void AItemPickUp::InitializePickup()
 {
 	//verify if the assets exist before loading
 	const FSoftObjectPath TablePath = PickupDataTable.ToSoftObjectPath();

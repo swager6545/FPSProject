@@ -2,21 +2,21 @@
 
 #pragma once
 
-#include "TP_PickUpComponent.h"
+#include "PickUpComponent.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "TP_ItemPickUp.generated.h"
+#include "ItemPickUp.generated.h"
 
 class UItemDefinition;
 
 UCLASS(BlueprintType, Blueprintable)
-class FPSTEMPLATE_API ATP_ItemPickUp : public AActor
+class FPSTEMPLATE_API AItemPickUp : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	ATP_ItemPickUp();
+	AItemPickUp();
 	
 	void InitializePickup();
 
@@ -40,7 +40,7 @@ protected:
 	TObjectPtr<UStaticMeshComponent> PickupMeshComponent;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Pickup | Components")
-	TObjectPtr<UTP_PickUpComponent> PickUpComp;
+	TObjectPtr<UPickUpComponent> PickUpComp;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Pickup | Respawn")
 	bool bShouldRespawn;

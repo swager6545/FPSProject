@@ -15,7 +15,7 @@ class UInputMappingContext;
 struct FInputActionValue;
 
 class UItemDefinition;
-class UTP_WeaponComponent;
+class UWeaponComponent;
 class UWeaponDefinition;
 class UConsumableDefinition;
 class AConsumableBase;
@@ -65,7 +65,7 @@ public:
 	TObjectPtr<UInventoryComponent> InventoryComponent;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Weapons")
-	UTP_WeaponComponent* WeaponComp;
+	UWeaponComponent* WeaponComp;
 
 protected:
 	/** Called for movement input */
