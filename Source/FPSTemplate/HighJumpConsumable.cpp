@@ -2,7 +2,6 @@
 
 
 #include "HighJumpConsumable.h"
-
 #include "GameFramework/CharacterMovementComponent.h"
 
 void AHighJumpConsumable::BeginPlay()

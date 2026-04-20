@@ -1,7 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "FPSTemplateGameMode.h"
-#include "FPSTemplateCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 
 AFPSTemplateGameMode::AFPSTemplateGameMode()

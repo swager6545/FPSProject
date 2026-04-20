@@ -2,7 +2,6 @@
 
 
 #include "HealthConsumable.h"
-
 #include "HealthComponent.h"
 
 void AHealthConsumable::BeginPlay()
