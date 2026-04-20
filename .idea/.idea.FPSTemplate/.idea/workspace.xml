@@ -18,7 +18,11 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e91e1c93-597e-4d32-93b5-cd039b7ad70d" name="Changes" comment="" />
+    <list default="true" id="e91e1c93-597e-4d32-93b5-cd039b7ad70d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Input/IMC_Default.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Input/IMC_Default.uasset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -247,6 +251,8 @@
       <workItem from="1776515465204" duration="2779000" />
       <workItem from="1776520492588" duration="773000" />
       <workItem from="1776676803101" duration="2766000" />
+      <workItem from="1776684370226" duration="1943000" />
+      <workItem from="1776702242731" duration="733000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored the code">
       <option name="closed" value="true" />
@@ -416,7 +422,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776678559271</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added a Main Menu">
+      <option name="closed" value="true" />
+      <created>1776686376460</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1776686376460</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +461,8 @@
     <MESSAGE value="Refined the EasingFunctionLibrary code" />
     <MESSAGE value="Renamed the Classes" />
     <MESSAGE value="Added small fixes to the door and the weapons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added small fixes to the door and the weapons" />
+    <MESSAGE value="Added a Main Menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a Main Menu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
