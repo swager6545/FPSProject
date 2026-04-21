@@ -26,6 +26,7 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Health")
 	float MaxHealth;
 	
+	//this was needed to update the health
 	UPROPERTY(BlueprintAssignable, Category = "Health")
 	FOnHealthChanged OnHealthChanged;
 	

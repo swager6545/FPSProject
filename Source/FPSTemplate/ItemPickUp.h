@@ -43,19 +43,17 @@ protected:
 	TObjectPtr<UPickUpComponent> PickUpComp;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Pickup | Respawn")
-	bool bShouldRespawn;
+	bool ShouldRespawn;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Pickup | Respawn")
 	float RespawnTime = 4.0f;
 	
 	FTimerHandle RespawnTimerHandle;
-	
+
+/* Won't work when building the game
 #if WITH_EDITOR
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 #endif
-
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+*/
 
 };

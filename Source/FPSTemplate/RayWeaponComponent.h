@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "WeaponComponent.h"
 #include "NiagaraComponent.h"
-#include "NiagaraFunctionLibrary.h"
+#include "NiagaraFunctionLibrary.h" //would crash the game if these are not included
 #include "RayWeaponComponent.generated.h"
 
 /**

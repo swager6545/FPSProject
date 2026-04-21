@@ -50,7 +50,7 @@ class AFPSTemplateCharacter : public ACharacter
 
 	/** Look Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
-	class UInputAction* LookAction;
+	UInputAction* LookAction;
 	
 public:
 	AFPSTemplateCharacter();
@@ -73,8 +73,7 @@ protected:
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
-
-protected:
+	
 	// APawn interface
 	virtual void NotifyControllerChanged() override;
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;

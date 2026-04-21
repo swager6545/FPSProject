@@ -58,13 +58,14 @@ void AItemPickUp::OnSphereBeginOverlap(UPrimitiveComponent* OverlappedComponent,
 	
 	//if the pickup should respawn, wait for the respawn time before 
 	//calling InitializePickup() to respawn it
-	if (bShouldRespawn)
+	if (ShouldRespawn)
 	{
 		GetWorldTimerManager().SetTimer(RespawnTimerHandle, this, &AItemPickUp::InitializePickup, RespawnTime, false);
 	}
 }
 
-//Update the pickup whenever the property changed
+//To be able to see the pickup by inputting its ID in the editor
+/*
 void AItemPickUp::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
 {
 	Super::PostEditChangeProperty(PropertyChangedEvent);
@@ -81,13 +82,7 @@ void AItemPickUp::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedE
 		InitializePickup();
 	}
 }
-
-// Called every frame
-void AItemPickUp::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
+*/
 
 void AItemPickUp::InitializePickup()
 {
