@@ -19,14 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e91e1c93-597e-4d32-93b5-cd039b7ad70d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FPSTemplate/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/FPSTemplateCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/HealthComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/HealthComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/InventoryComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/InventoryComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/ItemPickUp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/ItemPickUp.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/ItemPickUp.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/ItemPickUp.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/RayWeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/RayWeaponComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/FPSTemplate/MainMenuWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/FPSTemplate/MainMenuWidget.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +254,7 @@
       <workItem from="1776702242731" duration="733000" />
       <workItem from="1776719806385" duration="10301000" />
       <workItem from="1776775595750" duration="4508000" />
-      <workItem from="1776783808929" duration="2739000" />
+      <workItem from="1776783808929" duration="4266000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored the code">
       <option name="closed" value="true" />
@@ -438,7 +432,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776686376460</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Small Fixes">
+      <option name="closed" value="true" />
+      <created>1776788884615</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1776788884615</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,7 +472,8 @@
     <MESSAGE value="Renamed the Classes" />
     <MESSAGE value="Added small fixes to the door and the weapons" />
     <MESSAGE value="Added a Main Menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a Main Menu" />
+    <MESSAGE value="Small Fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small Fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

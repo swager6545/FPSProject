@@ -15,7 +15,7 @@ void UMainMenuWidget::NativeConstruct()
 
 void UMainMenuWidget::LoadLevel()
 {
-	UGameplayStatics::OpenLevel(GetWorld(), TEXT("/Game/FirstPerson/Maps/FirstPersonMap"), TRAVEL_Absolute);
+	UGameplayStatics::OpenLevel(GetWorld(), TEXT("FirstPersonMap"), TRAVEL_Absolute);
 }
 
 void UMainMenuWidget::ExitGame()
