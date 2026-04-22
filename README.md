@@ -5,6 +5,7 @@
 <li>ESC - Quit</li>
 
 # Features
+<li>A main menu</li>
 <li>A working health bar that changes colour depending on the amount of health</li>
 <li>Two different weapons</li>
 <li>An ammo counter for each weapon</li>
