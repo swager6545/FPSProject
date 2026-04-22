@@ -20,6 +20,7 @@
 # Bugs I haven't fixed yet
 <li>The game freezes whenever you open the door the first time</li>
 <li>The beams from the ray weapon sometimes won't appear when shooting the targets</li>
+<li>The name of the objects in the debug lines when picking them up don't show in the build</li>
 
 # Assets Used
 [Crosshair Pack](https://kenney.nl/assets/crosshair-pack) by Kenny
